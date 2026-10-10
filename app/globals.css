@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+:root {
+  --midnight-navy: #101b35;
+  --burnt-copper: #a84b12;
+  --warm-ivory: #f7f5f0;
+  --stone-beige: #e7e2d9;
+  --slate-blue-grey: #526174;
+  --subtle-border: #d7dce2;
+  --dark-section-border: #334056;
+  --white: #ffffff;
+
+  --button-primary: #101b35;
+  --button-primary-hover: #1b2a49;
+  --button-primary-active: #0a1225;
+  --button-secondary-hover: #eeeae2;
+  --button-focus: #a84b12;
+
+  --background: var(--warm-ivory);
+  --foreground: var(--midnight-navy);
+  --brand-font-heading: var(--font-geist-sans), Arial, sans-serif;
+  --brand-font-body: var(--font-geist-sans), Arial, sans-serif;
+
+  --text-hero: clamp(2.5rem, 4.2vw, 4rem);
+  --text-hero-body: clamp(1rem, calc(0.875rem + 0.5vw), 1.125rem);
+  --text-stat: clamp(1.625rem, 2vw, 2rem);
+  --text-stat-label: clamp(0.75rem, 0.875vw, 0.875rem);
+  --text-page-heading: clamp(2.25rem, 4vw, 3.5rem);
+  --text-section-heading: clamp(2rem, 3vw, 2.5rem);
+  --text-card-heading: clamp(1.125rem, 1.5vw, 1.375rem);
+  --text-body: 1rem;
+  --text-label: clamp(0.75rem, 0.7rem + 0.15vw, 0.8125rem);
+
+  --content-width: 90rem;
+  --page-gutter: 1.25rem;
+  --section-space: clamp(3rem, 7vw, 7rem);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-gutter: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-gutter: 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --page-gutter: clamp(3rem, 3.333vw, 4rem);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--midnight-navy);
+  --color-accent: var(--burnt-copper);
+  --color-main-background: var(--warm-ivory);
+  --color-alternate-background: var(--stone-beige);
+  --color-secondary-text: var(--slate-blue-grey);
+  --color-primary-text: var(--midnight-navy);
+  --color-dark-text: var(--white);
+  --color-subtle-border: var(--subtle-border);
+  --color-dark-section-border: var(--dark-section-border);
+  --color-white: var(--white);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--brand-font-heading);
+  --font-body: var(--brand-font-body);
+}
+
+@layer components {
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .button:focus-visible {
+    outline: 3px solid var(--button-focus);
+    outline-offset: 3px;
+  }
+
+  .button--primary,
+  .button--nav-cta {
+    background-color: var(--button-primary);
+    color: var(--white);
+  }
+
+  .button--primary:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--nav-cta:hover:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--button-hover-color, var(--button-primary-hover));
+  }
+
+  .button--primary:active:not(:disabled):not([aria-disabled="true"]),
+  .button--nav-cta:active:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--button-hover-color, var(--button-primary-active));
+  }
+
+  .button--secondary {
+    border-color: var(--button-primary);
+    background-color: transparent;
+    color: var(--button-primary);
+  }
+
+  .button--secondary:hover:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--button-hover-color, var(--button-secondary-hover));
+  }
+
+  .button--secondary:active:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--button-hover-color, var(--stone-beige));
+  }
+
+  .button--nav-cta {
+    border-radius: 9999px;
+  }
+
+  .button--contact-cta {
+    border-color: var(--warm-ivory);
+    background-color: var(--warm-ivory);
+    color: var(--midnight-navy);
+  }
+
+  .button.button--secondary.button--contact-secondary {
+    border-color: var(--warm-ivory);
+    background-color: transparent;
+    color: var(--white);
+  }
+
+  .button.button--secondary.button--contact-secondary:hover:not(:disabled):not([aria-disabled="true"]),
+  .button.button--secondary.button--contact-secondary:active:not(:disabled):not([aria-disabled="true"]) {
+    border-color: var(--warm-ivory);
+    background-color: rgb(247 245 240 / 12%);
+    color: var(--white);
+  }
+
+  .button--sm {
+    min-height: 40px;
+    padding-inline: 16px;
+    font-size: 0.875rem;
+  }
+
+  .button--md {
+    min-height: 52px;
+    padding-inline: 24px;
+  }
+
+  .button--lg {
+    min-height: 56px;
+    padding-inline: 28px;
+  }
+
+  .button--nav-cta.button--md {
+    min-height: 48px;
+  }
+
+  .button--icon-only {
+    padding-inline: 0;
+  }
+
+  .button--sm.button--icon-only {
+    width: 40px;
+  }
+
+  .button--md.button--icon-only {
+    width: 52px;
+  }
+
+  .button--lg.button--icon-only {
+    width: 56px;
+  }
+
+  .button--nav-cta.button--md.button--icon-only {
+    width: 48px;
+  }
+
+  .button--full-width {
+    width: 100%;
+  }
+
+  .button--unavailable,
+  .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .button__icon {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button__spinner {
+    width: 1em;
+    height: 1em;
+    flex: none;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: button-spin 700ms linear infinite;
+  }
+
+  @keyframes button-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .site-container {
+    width: min(
+      calc(100% - 2 * var(--page-gutter)),
+      var(--content-width)
+    );
+    margin-inline: auto;
+  }
+
+  .site-container--narrow {
+    max-width: 64rem;
+  }
+
+  .readable-copy {
+    max-width: 65ch;
+  }
+
+  .hero-copy {
+    max-width: 39rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button__spinner {
+    animation: none;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--brand-font-body);
+  font-size: var(--text-body);
+  line-height: 1.65;
+}
