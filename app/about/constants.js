@@ -1,38 +1,33 @@
 export const overviewPoints = [
   {
-    title: "4,000+ businesses",
-    text: "Collaborated with more than 4,000 businesses, delivering comprehensive financial solutions.",
-  },
-  {
     title: "Governance & compliance",
-    text: "Experienced professionals help strengthen governance and reduce the burden of accounting and compliance.",
+    text: "Professional support for accounting, audit and regulatory requirements.",
   },
   {
-    title: "Customised support",
-    text: "Tailored services designed to improve agility, responsiveness and financial health.",
+    title: "Bespoke solutions",
+    text: "Services tailored to each client's business context and professional requirements.",
   },
   {
-    title: "Strong relationships",
-    text: "Deep client relationships supported by practical knowledge to mitigate risk and create value.",
+    title: "Multidisciplinary expertise",
+    text: "Capabilities spanning taxation, audit, corporate law and advisory.",
   },
   {
-    title: "Nationwide capability",
-    text: "A multidisciplinary platform with professionals and branch support to serve clients across locations.",
+    title: "Client relationships",
+    text: "Responsive professional support informed by practical experience.",
   },
 ];
 
-export const keyCredentials = [
-  "80+ professionals supporting clients’ growth objectives.",
-  "Multi-disciplinary expertise across accounting, taxation, compliance and advisory.",
-  "Two decades of hands-on experience combined with professional practice.",
-  "Practical insights to help businesses navigate a dynamic marketplace.",
-];
-
-export const coreStrengths = [
-  "Wealth of Experience",
-  "Bespoke Solutions",
-  "Business Knowledge",
-  "Industry Stature",
-  "Responsiveness",
-  "Sector Agnostic",
+export const professionalPrinciples = [
+  {
+    title: "Understand the context",
+    text: "Begin with the client's needs and circumstances.",
+  },
+  {
+    title: "Apply relevant expertise",
+    text: "Bring together the right capabilities for the engagement.",
+  },
+  {
+    title: "Provide practical guidance",
+    text: "Focus on clear, relevant professional advice.",
+  },
 ];

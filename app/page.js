@@ -143,6 +143,7 @@ export default function Home() {
                 designation={partner.designation}
                 practice={partner.practice}
                 image={partner.image}
+                imagePosition={partner.imagePosition}
               />
             ))}
           </div>

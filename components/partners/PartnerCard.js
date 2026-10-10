@@ -6,6 +6,7 @@ export default function PartnerCard({
   designation,
   practice,
   image,
+  imagePosition,
   description,
   href,
   variant = "preview",
@@ -22,6 +23,7 @@ export default function PartnerCard({
             fill
             sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
             className="object-cover"
+            style={{ objectPosition: imagePosition }}
           />
         ) : (
           <span
@@ -33,7 +35,7 @@ export default function PartnerCard({
           </span>
         )}
       </div>
-      <h3 className={`mt-5 font-semibold text-primary ${isDetailed ? "text-xl" : "text-lg"}`}>
+      <h3 className="mb-1.5 mt-5 min-h-[1.75rem] text-[19px] font-semibold leading-[1.35] text-primary">
         {href ? (
           <Link
             href={href}
@@ -45,10 +47,12 @@ export default function PartnerCard({
           name
         )}
       </h3>
-      <p className="mt-1 text-sm text-secondary-text">{designation}</p>
-      {practice && <p className="text-sm text-secondary-text">{practice}</p>}
+      <div className="min-h-12 text-sm leading-[1.5] text-secondary-text">
+        <p>{designation}</p>
+        {practice && <p>{practice}</p>}
+      </div>
       {isDetailed && description && (
-        <p className="mt-4 text-base leading-7 text-secondary-text">
+        <p className="mt-5 text-[0.9375rem] leading-[1.7] text-secondary-text">
           {description}
         </p>
       )}

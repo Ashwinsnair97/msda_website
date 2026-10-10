@@ -2,14 +2,18 @@ export const partners = [
   {
     id: "mukunda",
     name: "CA Mukunda",
+    image: "/leadership/ca-mukunda.jpg",
+    imagePosition: "50% 16%",
     designation: "Co-Managing Partner",
     practice: "Head of Taxation & Audit",
     description:
-      "Mukund leads the Direct Taxation and Statutory Audit practice, bringing more than two decades of experience across multiple sectors and regions, including Europe, the USA and the UK. Previously associated with TYCO International, he holds B.Com, CWA, FCA and DISA qualifications.",
+      "Mukunda leads the Direct Taxation and Statutory Audit practice, bringing more than two decades of experience across multiple sectors and regions, including Europe, the USA and the UK. Previously associated with TYCO International, he holds B.Com, CWA, FCA and DISA qualifications.",
   },
   {
     id: "shubha-shankar",
     name: "CA Shubha Shankar",
+    image: "/leadership/ca-shubha.jpg",
+    imagePosition: "50% 21%",
     designation: "Partner",
     practice: "Corporate Law",
     description:
@@ -18,6 +22,8 @@ export const partners = [
   {
     id: "devendra-nayak",
     name: "CA Devendra Nayak",
+    image: "/leadership/ca-nayak.jpg",
+    imagePosition: "50% 27%",
     designation: "Partner",
     practice: "FEMA & International Taxation",
     description:
@@ -26,6 +32,8 @@ export const partners = [
   {
     id: "manikanteshwarudu-thoka",
     name: "CA MANIKANTESHWARUDU THOKA",
+    image: "/leadership/ca-mani.jpg",
+    imagePosition: "50% 19%",
     designation: "B.COM, FCA",
     practice: "Audit and International Taxation",
     description:
@@ -34,6 +42,8 @@ export const partners = [
   {
     id: "abhishek-gupta",
     name: "CA Abhishek Gupta",
+    image: "/leadership/ca-abhishek.jpg",
+    imagePosition: "50% 20%",
     designation: "Partner",
     practice: "Public Sector Audit",
     description:
@@ -42,6 +52,8 @@ export const partners = [
   {
     id: "abilash-r",
     name: "CA Abilash R",
+    image: "/leadership/ca-abilash.jpg",
+    imagePosition: "50% 15%",
     designation: "Partner",
     practice: "Indirect Taxation",
     description:
@@ -50,6 +62,8 @@ export const partners = [
   {
     id: "prashanth-reddy-yalala",
     name: "CA Prashanth Reddy Yalala",
+    image: "/leadership/ca-prashant.jpg",
+    imagePosition: "50% 16%",
     designation: "B.Com, FCA, DISA",
     practice: "Hyderabad Branch",
     description:
