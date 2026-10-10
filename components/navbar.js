@@ -23,9 +23,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="relative z-50">
+    <header className="fixed left-0 top-0 z-50 w-full">
       <nav
-        className={`fixed left-0 top-0 z-50 w-full font-body transition-all duration-500 ${
+        className={`w-full font-body transition-all duration-500 ${
           isScrolled
             ? "bg-white/20 py-2 shadow-md text-gray-700 backdrop-blur-lg md:py-3"
             : "bg-transparent py-4 text-primary md:py-6"
@@ -81,54 +81,75 @@ export default function Navbar() {
           <div className="flex items-center gap-3 md:hidden">
             <button
               type="button"
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${isScrolled ? "text-gray-700" : "text-primary"}`}
+              className={`relative flex h-10 w-10 items-center justify-center ${isScrolled ? "text-gray-700" : "text-primary"}`}
             >
-              <svg className="h-6 w-6 cursor-pointer" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <line x1="4" y1="6" x2="20" y2="6" />
-                <line x1="4" y1="12" x2="20" y2="12" />
-                <line x1="4" y1="18" x2="20" y2="18" />
-              </svg>
+              <span
+                className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-500 ${
+                  isMenuOpen
+                    ? "top-1/2 -translate-y-1/2 rotate-45"
+                    : "top-3"
+                }`}
+              />
+              <span
+                className={`absolute left-2 right-2 top-1/2 h-0.5 -translate-y-1/2 bg-current transition-all duration-500 ${
+                  isMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute left-2 right-2 h-0.5 bg-current transition-all duration-500 ${
+                  isMenuOpen
+                    ? "top-1/2 -translate-y-1/2 -rotate-45"
+                    : "bottom-3"
+                }`}
+              />
             </button>
           </div>
         </div>
       </nav>
 
       <div
-        className={`fixed right-0 top-0 z-40 h-screen w-full bg-white font-body text-base font-medium text-gray-800 transition-all duration-500 md:hidden ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        id="mobile-navigation"
+        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
+        className={`max-h-0 overflow-hidden font-body text-sm font-medium opacity-0 transition-[max-height,opacity] duration-500 ease-in-out md:hidden ${
+          isScrolled
+            ? "bg-white/20 text-gray-700 shadow-md backdrop-blur-lg"
+            : "bg-transparent text-primary"
+        } ${
+          isMenuOpen ? "max-h-20 opacity-100" : ""
         }`}
       >
-        <button
-          type="button"
-          aria-label="Close menu"
-          className="absolute right-4 top-4"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
+        <div className="overflow-x-auto">
+          <div className="flex w-max min-w-full items-center justify-center gap-5 px-4 py-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`group flex cursor-pointer flex-col gap-0.5 whitespace-nowrap transition-colors hover:text-accent ${isScrolled ? "text-gray-700" : "text-primary"}`}
+              >
+                {link.label}
+                <span
+                  className={`block h-0.5 w-0 transition-all duration-300 group-hover:w-full group-hover:bg-accent ${isScrolled ? "bg-gray-700" : "bg-primary"}`}
+                />
+              </Link>
+            ))}
 
-        <div className="flex h-full flex-col items-end justify-center gap-16 px-8">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
-
-          <Button
-            href={`mailto:${site.email}`}
-            variant="nav-cta"
-            size="md"
-            hoverColor="var(--burnt-copper)"
-            onClick={() => setIsMenuOpen(false)}
-            icon={<span aria-hidden="true">→</span>}
-          >
-            Contact Us
-          </Button>
+            <Button
+              href={`mailto:${site.email}`}
+              variant="nav-cta"
+              size="sm"
+              hoverColor="var(--burnt-copper)"
+              onClick={() => setIsMenuOpen(false)}
+              icon={<span aria-hidden="true">→</span>}
+            >
+              Contact Us
+            </Button>
+          </div>
         </div>
       </div>
     </header>
