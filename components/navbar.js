@@ -118,7 +118,7 @@ export default function Navbar() {
         className={`max-h-0 overflow-hidden font-body text-sm font-medium opacity-0 transition-[max-height,opacity] duration-500 ease-in-out md:hidden ${
           isScrolled
             ? "bg-white/20 text-gray-700 shadow-md backdrop-blur-lg"
-            : "bg-transparent text-primary"
+            : "bg-white/20 text-primary backdrop-blur-lg"
         } ${
           isMenuOpen ? "max-h-20 opacity-100" : ""
         }`}
