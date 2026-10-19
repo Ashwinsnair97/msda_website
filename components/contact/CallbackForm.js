@@ -1,15 +1,10 @@
 "use client";
 
-import { site } from "../../data/site";
+import Button from "@/components/ui/Button";
+import { services } from "@/data/services";
+import { mailtoHref, site } from "@/data/site";
 
-const assistanceAreas = [
-  "Transaction Advisory",
-  "Business Structuring & Compliance",
-  "Audit & Assurance",
-  "Accounting & Business Support",
-  "Tax Planning & Advisory",
-  "Other",
-];
+const assistanceAreas = [...services.map((service) => service.shortTitle), "Other"];
 
 const fieldClasses =
   "mt-2 min-h-12 w-full rounded border border-subtle-border bg-white px-4 py-3 text-base text-primary outline-none transition focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-accent/30";
@@ -82,7 +77,7 @@ export default function CallbackForm() {
 
       <label className="flex items-start gap-3 text-sm leading-6 text-secondary-text">
         <input
-          className="mt-1 size-4 accent-[#101b35] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="focus-ring mt-1 size-4 accent-primary [--focus-ring-offset:2px]"
           name="consent"
           type="checkbox"
           required
@@ -93,19 +88,13 @@ export default function CallbackForm() {
         </span>
       </label>
 
-      <button
-        className="button button--primary button--md cursor-not-allowed opacity-60"
-        type="button"
-        disabled
-      >
-        Callback requests are not enabled yet
-      </button>
+      <Button disabled>Callback requests are not enabled yet</Button>
       <p id="callback-form-status" className="text-sm leading-6 text-secondary-text">
         This form is a preview and does not submit information. To contact the firm,
         email{" "}
         <a
-          className="font-medium text-primary underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-          href={`mailto:${site.email}`}
+          className="focus-ring font-medium text-primary underline underline-offset-4 [--focus-ring-offset:2px]"
+          href={mailtoHref}
         >
           {site.email}
         </a>

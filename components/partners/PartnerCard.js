@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import PartnerPortrait from "./PartnerPortrait";
 
 export default function PartnerCard({
   name,
@@ -17,13 +17,11 @@ export default function PartnerCard({
     <article>
       <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-[5px] border border-subtle-border bg-white text-center">
         {image ? (
-          <Image
+          <PartnerPortrait
             src={image}
-            alt={`Portrait of ${name}`}
-            fill
+            name={name}
+            position={imagePosition}
             sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-            className="object-cover"
-            style={{ objectPosition: imagePosition }}
           />
         ) : (
           <span
@@ -39,7 +37,7 @@ export default function PartnerCard({
         {href ? (
           <Link
             href={href}
-            className="transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="focus-ring transition-colors hover:text-accent [--focus-ring-offset:2px]"
           >
             {name}
           </Link>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import Button from "@/components/ui/Button";
 
 const acknowledgementKey = "msda-compliance-notice-acknowledged";
 let visibilitySnapshot;
@@ -63,13 +64,13 @@ export default function ComplianceNotice() {
         we are not permitted to solicit work or advertise. By clicking on the
         &apos;Agree&apos; below, you acknowledge
       </p>
-      <button
-        type="button"
+      <Button
+        size="sm"
         onClick={handleAgree}
-        className="button button--primary button--sm mt-4 w-full shrink-0 sm:mt-0 sm:w-auto"
+        className="mt-4 w-full shrink-0 sm:mt-0 sm:w-auto"
       >
         Agree
-      </button>
+      </Button>
     </aside>
   );
 }

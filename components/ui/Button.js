@@ -1,7 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { buttonSizeClasses, buttonVariantClasses } from "./buttonStyles";
+
+const buttonVariantClasses = {
+  primary: "button--primary",
+  secondary: "button--secondary",
+  inverse: "button--inverse",
+  "inverse-secondary": "button--inverse-secondary",
+  "nav-cta": "button--nav-cta",
+};
+
+const buttonSizeClasses = {
+  sm: "button--sm",
+  md: "button--md",
+  lg: "button--lg",
+};
 
 const validVariants = Object.keys(buttonVariantClasses);
 const validSizes = Object.keys(buttonSizeClasses);
@@ -59,11 +72,7 @@ export default function Button({
     <>
       {loading && <span className="button__spinner" aria-hidden="true" />}
       {iconOnly ? (
-        icon ? (
-          <span className="button__icon" aria-hidden="true">{icon}</span>
-        ) : (
-          <span className="button__icon" aria-hidden="true">{children}</span>
-        )
+        <span className="button__icon" aria-hidden="true">{icon ?? children}</span>
       ) : (
         <>
           {icon && iconPosition === "start" && (

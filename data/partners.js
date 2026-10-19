@@ -2,71 +2,92 @@ export const partners = [
   {
     id: "mukunda",
     name: "CA Mukunda",
+    short_name: "CA Mukunda",
     image: "/leadership/ca-mukunda.jpg",
     imagePosition: "50% 16%",
-    designation: "Co-Managing Partner",
-    practice: "Head of Taxation & Audit",
-    description:
-      "Mukunda leads the Direct Taxation and Statutory Audit practice, bringing more than two decades of experience across multiple sectors and regions, including Europe, the USA and the UK. Previously associated with TYCO International, he holds B.Com, CWA, FCA and DISA qualifications.",
+    designation: "Managing Partner",
+    practice: "Head of Audit & Direct Taxation",
+    bio: [
+      "Mukunda leads the Direct Taxation and Statutory Audit practices, bringing over two decades of rich professional experience across diverse industries and international markets, including Europe, the USA and the UK. His professional journey includes an association with TYCO International, where he gained valuable exposure to corporate finance, taxation and global business operations.",
+      "A commerce graduate, Mukunda holds the qualifications of CWA, FCA and DISA, combining strong technical expertise with a practical understanding of complex financial and regulatory matters. He specialises in direct taxation, statutory audits, financial reporting and regulatory compliance, with a focus on delivering sound professional advice, ensuring compliance and helping businesses navigate evolving tax and audit requirements. His extensive experience, analytical approach and commitment to professional excellence make him a trusted advisor to clients across sectors.",
+    ],
   },
   {
     id: "shubha-shankar",
     name: "CA Shubha Shankar",
+    short_name: "CA Shubha",
     image: "/leadership/ca-shubha.jpg",
     imagePosition: "50% 21%",
     designation: "Partner",
     practice: "Corporate Law",
-    description:
-      "Shubha has been a partner since 2011 and brings experience from Deloitte and Wipro. She holds FCA, CS and CISA qualifications and leads the Corporate Law advisory practice, helping corporates navigate legal frameworks.",
+    bio: [
+      "11.	CA Shubha Shankar has been a Partner since 2011 and brings a wealth of professional experience spanning corporate advisory, governance, and regulatory compliance. With prior experience at leading organisations such as Deloitte and Wipro, she combines strong technical expertise with a practical understanding of corporate operations and business requirements. Her professional qualifications include Fellow Chartered Accountant (FCA), Company Secretary (CS), and Certified Information Systems Auditor (CISA), reflecting her multidisciplinary expertise across finance, corporate law, and information systems.",
+      "Shubha leads the Corporate Law advisory practice, assisting businesses in navigating complex legal and regulatory frameworks with confidence and clarity. Her areas of focus include corporate law advisory, statutory and regulatory compliance, corporate governance, and legal and procedural requirements applicable to businesses. She works closely with corporates to provide practical, structured, and compliance-oriented guidance, helping them manage regulatory obligations, strengthen governance practices, and make informed business decisions. Her experience and holistic approach enable her to deliver solutions aligned with both legal requirements and organisational objectives.",
+    ],
   },
   {
     id: "devendra-nayak",
     name: "CA Devendra Nayak",
+    short_name: "CA Devendra",
     image: "/leadership/ca-nayak.jpg",
     imagePosition: "50% 27%",
     designation: "Partner",
     practice: "FEMA & International Taxation",
-    description:
-      "With more than 40 years of experience, Devendra is a distinguished professional in audit, international taxation, including expatriate taxation, and FEMA advisory. He has advised numerous listed entities on complex regulatory matters. He holds FCA and LLB qualifications and mentors the leadership team.",
-  },
-  {
-    id: "manikanteshwarudu-thoka",
-    name: "CA MANIKANTESHWARUDU THOKA",
-    image: "/leadership/ca-mani.jpg",
-    imagePosition: "50% 19%",
-    designation: "B.COM, FCA",
-    practice: "Audit and International Taxation",
-    description:
-      "CA Mani is an experienced Audit Specialist with a strong background in accounting, financial audits and regulatory compliance. He also brings substantial knowledge of international taxation, including cross-border regulations, tax planning and reporting standards. His analytical approach supports clients in complex international financial and compliance matters.",
+    bio: [
+      "CA Devendra Nayak is a distinguished accounting and advisory professional with over four decades of experience across audit, international taxation, expatriate taxation, and Foreign Exchange Management Act (FEMA) advisory. A Fellow Chartered Accountant (FCA) and Bachelor of Laws (LLB), he brings a wealth of technical knowledge and practical insight gained through advising businesses on complex financial, tax, and regulatory matters. Over the course of his career, he has worked closely with numerous listed entities, providing strategic guidance on intricate regulatory requirements and helping organisations navigate evolving domestic and international compliance frameworks with confidence.",
+      "Devendra plays a pivotal role in the firm's FEMA and International Taxation practice, offering guidance on cross-border transactions, foreign exchange regulations, international tax matters, and taxation of expatriates. Beyond his professional expertise, he is a trusted mentor and guiding force within the firm, sharing his extensive knowledge and experience with colleagues across practice areas. His thoughtful counsel, balanced judgement, and commitment to professional excellence have made him a valued source of guidance for the firm's leadership team. Through his mentorship and hands-on approach, he continues to nurture professional talent, encourage sound decision-making, and strengthen the firm's culture of integrity, collaboration, and continuous learning.",
+    ],
   },
   {
     id: "abhishek-gupta",
     name: "CA Abhishek Gupta",
+    short_name: "CA Abhishek",
     image: "/leadership/ca-abhishek.jpg",
     imagePosition: "50% 20%",
     designation: "Partner",
     practice: "Public Sector Audit",
-    description:
-      "Abhishek leads the Public Sector Advisory and Audit practice and is based in the Raipur office. He is an FCA and holds a Certificate of Concurrent Audit. He brings extensive experience in specialised advisory and audit services for the public sector and government departments.",
+    bio: [
+      "CA Abhishek Gupta is a Fellow Chartered Accountant (FCA) with extensive experience in public sector audit, government audits, and specialised assurance and advisory services. Based at the firm's head office in Raipur, he leads the Public Sector Advisory and Audit practice, overseeing engagements involving government departments and public sector entities. He also holds a Certificate of Concurrent Audit, complementing his professional expertise in audit, financial oversight, and regulatory compliance. His experience enables him to address the distinct procedural, financial, and regulatory requirements associated with government audit assignments.",
+      "Abhishek oversees the firm's government audit practice, with a particular focus on assignments across Raipur and the wider regions including Chhattisgarh, Madhya Pradesh, and Jharkhand. He works closely with government departments and public sector organisations to support effective audit execution, financial accountability, and adherence to applicable rules and regulations. Through his leadership, he guides audit teams in managing specialised engagements, maintaining professional standards, and delivering thorough, reliable, and timely audit outcomes. His regional presence in Raipur also strengthens the firm's ability to serve public sector clients and address their requirements with local understanding and dedicated professional support.",
+    ],
+  },
+  {
+    id: "manikanteshwarudu-thoka",
+    name: "CA MANIKANTESHWARUDU THOKA",
+    short_name: "CA Mani",
+    image: "/leadership/ca-mani.jpg",
+    imagePosition: "50% 19%",
+    designation: "B.COM, FCA",
+    practice: "Audit and International Taxation",
+    bio: [
+      "CA Manikanteshwarudu Thoka is a Fellow Chartered Accountant (FCA) with extensive experience in auditing, accounting, financial reporting, and regulatory compliance. As the head of the firm's Audit practice, he plays a key role in overseeing audit engagements and ensuring the quality, accuracy, and professional integrity of audit deliverables. With a strong understanding of financial systems, accounting principles, and applicable statutory requirements, he brings a methodical and detail-oriented approach to evaluating financial statements, assessing compliance, and addressing complex audit matters. His expertise and commitment to professional standards contribute to the delivery of reliable and insightful audit services across the firm's diverse client base.",
+      "In addition to his audit expertise, Mani has substantial knowledge of international taxation, including cross-border tax regulations, tax planning, and international tax reporting requirements. He helps clients navigate complex tax and compliance matters arising from international business operations, bringing a practical perspective to evolving regulatory requirements. In his leadership role, he oversees the audit function and is responsible for the finalisation of audit assignments, providing technical guidance to engagement teams and reviewing deliverables to maintain consistency and quality. His analytical approach, attention to detail, and focus on professional excellence make him an integral part of the firm's leadership and client service capabilities.",
+    ],
   },
   {
     id: "abilash-r",
     name: "CA Abilash R",
+    short_name: "CA Abilash",
     image: "/leadership/ca-abilash.jpg",
     imagePosition: "50% 15%",
     designation: "Partner",
     practice: "Indirect Taxation",
-    description:
-      "Abilash is a specialist in indirect taxation with strong practical knowledge. He has experience in designing and implementing tax-efficient business models for established organisations.",
+    bio: [
+      "CA Abilash R is a Chartered Accountant and Bachelor of Laws (LLB), combining financial expertise with a strong understanding of legal principles to provide comprehensive advisory and litigation support in indirect taxation. He specialises in Goods and Services Tax (GST), with experience spanning GST audits, annual returns, refunds, compliance management, and the handling of complex tax disputes. He also advises established organisations on designing and implementing tax-efficient business models, helping them balance commercial objectives with regulatory requirements.",
+      "Abilash has extensive practical experience in GST proceedings, including departmental inspections, search and seizure operations, show-cause notices, and detention of goods and conveyances. His dual qualification in finance and law enables him to approach indirect tax matters from both technical and legal perspectives, supporting clients in navigating complex regulatory issues and resolving disputes effectively. He is also actively involved in professional and industry associations, contributing to representations before government authorities to address practical challenges in GST administration and advocate for a more business-friendly tax framework.",
+    ],
   },
   {
     id: "prashanth-reddy-yalala",
     name: "CA Prashanth Reddy Yalala",
+    short_name: "CA Prashanth",
     image: "/leadership/ca-prashant.jpg",
     imagePosition: "50% 16%",
     designation: "B.Com, FCA, DISA",
-    practice: "Hyderabad Branch",
-    description:
-      "Prashanth is a qualified Chartered Accountant with strong experience in GST, Income Tax, accounting, and statutory and internal audits. As Partner heading the Hyderabad branch, he manages operations and supports clients with tax planning, compliance management and strategic advisory across industries.",
+    practice: "Partner – Hyderabad Branch",
+    bio: [
+      "CA Prashanth Reddy Yalala is a Fellow Chartered Accountant (FCA) with a Diploma in Information System Audit (DISA) and extensive experience in taxation, accounting, and audit services. His areas of expertise include Goods and Services Tax (GST), Income Tax, statutory audits, and internal audits. With a strong understanding of financial reporting, regulatory frameworks, and business requirements, he provides practical and comprehensive professional services to clients across diverse industries, helping them strengthen compliance, manage tax obligations, and maintain robust financial processes.",
+      "As the Partner heading the firm's Hyderabad branch, Prashanth is responsible for overseeing branch operations, managing client relationships, and driving the delivery of quality professional services. He works closely with businesses on tax planning, compliance management, audit engagements, and strategic advisory, offering solutions tailored to their operational and regulatory needs. Through his leadership, professional expertise, and client-focused approach, he plays an important role in strengthening the firm's presence in Hyderabad and building long-term relationships founded on trust, responsiveness, and professional excellence.",
+    ],
   },
 ];

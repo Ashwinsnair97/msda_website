@@ -3,9 +3,14 @@
 :root {
   --midnight-navy: #101b35;
   --burnt-copper: #a84b12;
+  --copper-glow: #e5a06e;
+  --copper-sand: #e8b089;
+  --copper-blush: #f4c5a2;
   --warm-ivory: #f7f5f0;
   --stone-beige: #e7e2d9;
   --slate-blue-grey: #526174;
+  --ink-slate: #2e3d4f;
+  --mist-blue: #d5dce8;
   --subtle-border: #d7dce2;
   --dark-section-border: #334056;
   --white: #ffffff;
@@ -16,24 +21,24 @@
   --button-secondary-hover: #eeeae2;
   --button-focus: #a84b12;
 
-  --background: var(--warm-ivory);
-  --foreground: var(--midnight-navy);
-  --brand-font-heading: var(--font-geist-sans), Arial, sans-serif;
-  --brand-font-body: var(--font-geist-sans), Arial, sans-serif;
+  /* Font variables are injected on <html> by next/font in app/layout.js. */
+  --brand-font-heading: var(--font-dm-serif-display), Georgia, serif;
+  --brand-font-body: var(--font-inter), Arial, sans-serif;
 
   --text-hero: clamp(2.5rem, 4.2vw, 4rem);
   --text-hero-body: clamp(1rem, calc(0.875rem + 0.5vw), 1.125rem);
   --text-stat: clamp(1.625rem, 2vw, 2rem);
   --text-stat-label: clamp(0.75rem, 0.875vw, 0.875rem);
-  --text-page-heading: clamp(2.25rem, 4vw, 3.5rem);
-  --text-section-heading: clamp(2rem, 3vw, 2.5rem);
-  --text-card-heading: clamp(1.125rem, 1.5vw, 1.375rem);
+  --text-page-heading: clamp(2.5rem, 4.5vw, 3.5rem);
+  --text-section-heading: clamp(2.25rem, 3vw, 2.5rem);
   --text-body: 1rem;
   --text-label: clamp(0.75rem, 0.7rem + 0.15vw, 0.8125rem);
 
   --content-width: 90rem;
   --page-gutter: 1.25rem;
   --section-space: clamp(3rem, 7vw, 7rem);
+
+  --focus-ring-color: var(--burnt-copper);
 }
 
 @media (min-width: 640px) {
@@ -55,22 +60,32 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --color-primary: var(--midnight-navy);
   --color-accent: var(--burnt-copper);
+  --color-accent-light: var(--copper-glow);
+  --color-accent-soft: var(--copper-sand);
+  --color-accent-pale: var(--copper-blush);
   --color-main-background: var(--warm-ivory);
   --color-alternate-background: var(--stone-beige);
-  --color-secondary-text: var(--slate-blue-grey);
   --color-primary-text: var(--midnight-navy);
-  --color-dark-text: var(--white);
+  --color-secondary-text: var(--slate-blue-grey);
+  --color-body-text: var(--ink-slate);
+  --color-on-dark-muted: var(--mist-blue);
   --color-subtle-border: var(--subtle-border);
   --color-dark-section-border: var(--dark-section-border);
-  --color-white: var(--white);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-heading: var(--brand-font-heading);
   --font-body: var(--brand-font-body);
+}
+
+/*
+ * Keyboard focus outline. Colour follows --focus-ring-color, so a dark section
+ * can switch every ring inside it by setting the variable once.
+ */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset, 4px);
+  }
 }
 
 @layer components {
@@ -134,23 +149,28 @@
     border-radius: 9999px;
   }
 
-  .button--contact-cta {
+  /* Inverse variants sit on dark (midnight navy) sections. */
+  .button--inverse {
     border-color: var(--warm-ivory);
     background-color: var(--warm-ivory);
     color: var(--midnight-navy);
   }
 
-  .button.button--secondary.button--contact-secondary {
+  .button--inverse:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--inverse:active:not(:disabled):not([aria-disabled="true"]) {
+    border-color: var(--stone-beige);
+    background-color: var(--stone-beige);
+  }
+
+  .button--inverse-secondary {
     border-color: var(--warm-ivory);
     background-color: transparent;
     color: var(--white);
   }
 
-  .button.button--secondary.button--contact-secondary:hover:not(:disabled):not([aria-disabled="true"]),
-  .button.button--secondary.button--contact-secondary:active:not(:disabled):not([aria-disabled="true"]) {
-    border-color: var(--warm-ivory);
+  .button--inverse-secondary:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--inverse-secondary:active:not(:disabled):not([aria-disabled="true"]) {
     background-color: rgb(247 245 240 / 12%);
-    color: var(--white);
   }
 
   .button--sm {
@@ -234,14 +254,6 @@
     margin-inline: auto;
   }
 
-  .site-container--narrow {
-    max-width: 64rem;
-  }
-
-  .readable-copy {
-    max-width: 65ch;
-  }
-
   .hero-copy {
     max-width: 39rem;
   }
@@ -258,8 +270,8 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--warm-ivory);
+  color: var(--midnight-navy);
   font-family: var(--brand-font-body);
   font-size: var(--text-body);
   line-height: 1.65;

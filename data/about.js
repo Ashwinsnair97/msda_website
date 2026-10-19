@@ -16,18 +16,3 @@ export const overviewPoints = [
     text: "Responsive professional support informed by practical experience.",
   },
 ];
-
-export const professionalPrinciples = [
-  {
-    title: "Understand the context",
-    text: "Begin with the client's needs and circumstances.",
-  },
-  {
-    title: "Apply relevant expertise",
-    text: "Bring together the right capabilities for the engagement.",
-  },
-  {
-    title: "Provide practical guidance",
-    text: "Focus on clear, relevant professional advice.",
-  },
-];

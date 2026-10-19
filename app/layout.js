@@ -1,8 +1,9 @@
 import { DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/navbar";
-import Footer from "../components/layout/Footer";
-import ComplianceNotice from "../components/layout/ComplianceNotice";
+import ComplianceNotice from "@/components/layout/ComplianceNotice";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+import { site } from "@/data/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,7 +17,10 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata = {
-  title: "MSDA & CO | Chartered Accountants",
+  title: {
+    template: `%s | ${site.name}`,
+    default: `${site.name} | Chartered Accountants`,
+  },
   description:
     "MSDA & CO is a trusted professional services partner with two decades of experience.",
 };
@@ -26,10 +30,6 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${inter.variable} ${dmSerifDisplay.variable} h-full antialiased`}
-      style={{
-        "--brand-font-body": "var(--font-inter)",
-        "--brand-font-heading": "var(--font-dm-serif-display)",
-      }}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
