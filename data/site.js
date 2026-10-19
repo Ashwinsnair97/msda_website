@@ -1,4 +1,4 @@
-const email = "contact@msda.pro";
+const email = "contact@msda.co";
 
 export const site = {
   name: "MSDA & CO",

@@ -8,6 +8,7 @@ import { partners } from "../data/partners";
 import { services } from "../data/services";
 import { site } from "../data/site";
 
+
 export default function Home() {
   return (
     <main className="bg-main-background text-primary-text">
@@ -15,7 +16,7 @@ export default function Home() {
         className="relative flex min-h-[620px] items-center overflow-hidden bg-cover bg-center pb-20 pt-36 lg:min-h-[680px]"
         style={{ backgroundImage: `url(${CA_home.src})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-main-background/90 via-main-background/30 to-main-background/0" />
+        <div className="absolute inset-0 bg-main-background/80 sm:bg-transparent sm:bg-gradient-to-r sm:from-main-background/90 sm:via-main-background/30 sm:to-main-background/0" />
         <div className="site-container relative">
           <div className="max-w-2xl">
             <p className="mb-4 text-[length:var(--text-label)] font-semibold uppercase tracking-[0.2em] text-accent">

@@ -2,6 +2,7 @@ import { DM_Serif_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/layout/Footer";
+import ComplianceNotice from "../components/layout/ComplianceNotice";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <ComplianceNotice />
       </body>
     </html>
   );
