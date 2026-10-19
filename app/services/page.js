@@ -3,14 +3,14 @@ import ApproachSection from "@/components/sections/ApproachSection";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { services, supportAreas } from "@/data/services";
+import { clientSegments, services } from "@/data/services";
 import { mailtoHref } from "@/data/site";
 import { formatIndex } from "@/lib/format";
 
 export const metadata = {
   title: "Services",
   description:
-    "Transaction advisory, business structuring, audit and assurance, accounting support, and direct and indirect tax advisory from MSDA & CO.",
+    "Audit and assurance, direct and indirect taxation, international taxation and FEMA, corporate law, virtual CFO, transaction advisory and accounting outsourcing from MSDA & CO.",
 };
 
 export default function ServicesPage() {
@@ -80,13 +80,14 @@ export default function ServicesPage() {
       <section className="bg-main-background py-16 lg:py-20">
         <div className="site-container">
           <SectionHeader
-            eyebrow="How we help"
-            title="Support that extends beyond individual engagements"
+            eyebrow="Who we serve"
+            title="Support for every kind of client"
+            intro={clientSegments.intro}
             className="mb-8 max-w-[48rem]"
           />
 
           <div className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
-            {supportAreas.map((area) => (
+            {clientSegments.items.map((area) => (
               <article key={area.title} className="border-t border-subtle-border py-5 lg:py-6">
                 <h3 className="text-base font-semibold leading-[1.4] text-primary">
                   {area.title}

@@ -26,19 +26,6 @@ export const partners = [
     ],
   },
   {
-    id: "devendra-nayak",
-    name: "CA Devendra Nayak",
-    short_name: "CA Devendra",
-    image: "/leadership/ca-nayak.jpg",
-    imagePosition: "50% 27%",
-    designation: "Partner",
-    practice: "FEMA & International Taxation",
-    bio: [
-      "CA Devendra Nayak is a distinguished accounting and advisory professional with over four decades of experience across audit, international taxation, expatriate taxation, and Foreign Exchange Management Act (FEMA) advisory. A Fellow Chartered Accountant (FCA) and Bachelor of Laws (LLB), he brings a wealth of technical knowledge and practical insight gained through advising businesses on complex financial, tax, and regulatory matters. Over the course of his career, he has worked closely with numerous listed entities, providing strategic guidance on intricate regulatory requirements and helping organisations navigate evolving domestic and international compliance frameworks with confidence.",
-      "Devendra plays a pivotal role in the firm's FEMA and International Taxation practice, offering guidance on cross-border transactions, foreign exchange regulations, international tax matters, and taxation of expatriates. Beyond his professional expertise, he is a trusted mentor and guiding force within the firm, sharing his extensive knowledge and experience with colleagues across practice areas. His thoughtful counsel, balanced judgement, and commitment to professional excellence have made him a valued source of guidance for the firm's leadership team. Through his mentorship and hands-on approach, he continues to nurture professional talent, encourage sound decision-making, and strengthen the firm's culture of integrity, collaboration, and continuous learning.",
-    ],
-  },
-  {
     id: "abhishek-gupta",
     name: "CA Abhishek Gupta",
     short_name: "CA Abhishek",
@@ -52,16 +39,16 @@ export const partners = [
     ],
   },
   {
-    id: "manikanteshwarudu-thoka",
-    name: "CA MANIKANTESHWARUDU THOKA",
-    short_name: "CA Mani",
-    image: "/leadership/ca-mani.jpg",
-    imagePosition: "50% 19%",
-    designation: "B.COM, FCA",
-    practice: "Audit and International Taxation",
+    id: "devendra-nayak",
+    name: "CA Devendra Nayak",
+    short_name: "CA Devendra",
+    image: "/leadership/ca-nayak.jpg",
+    imagePosition: "50% 27%",
+    designation: "Partner",
+    practice: "FEMA & International Taxation",
     bio: [
-      "CA Manikanteshwarudu Thoka is a Fellow Chartered Accountant (FCA) with extensive experience in auditing, accounting, financial reporting, and regulatory compliance. As the head of the firm's Audit practice, he plays a key role in overseeing audit engagements and ensuring the quality, accuracy, and professional integrity of audit deliverables. With a strong understanding of financial systems, accounting principles, and applicable statutory requirements, he brings a methodical and detail-oriented approach to evaluating financial statements, assessing compliance, and addressing complex audit matters. His expertise and commitment to professional standards contribute to the delivery of reliable and insightful audit services across the firm's diverse client base.",
-      "In addition to his audit expertise, Mani has substantial knowledge of international taxation, including cross-border tax regulations, tax planning, and international tax reporting requirements. He helps clients navigate complex tax and compliance matters arising from international business operations, bringing a practical perspective to evolving regulatory requirements. In his leadership role, he oversees the audit function and is responsible for the finalisation of audit assignments, providing technical guidance to engagement teams and reviewing deliverables to maintain consistency and quality. His analytical approach, attention to detail, and focus on professional excellence make him an integral part of the firm's leadership and client service capabilities.",
+      "CA Devendra Nayak is a distinguished accounting and advisory professional with over four decades of experience across audit, international taxation, expatriate taxation, and Foreign Exchange Management Act (FEMA) advisory. A Fellow Chartered Accountant (FCA) and Bachelor of Laws (LLB), he brings a wealth of technical knowledge and practical insight gained through advising businesses on complex financial, tax, and regulatory matters. Over the course of his career, he has worked closely with numerous listed entities, providing strategic guidance on intricate regulatory requirements and helping organisations navigate evolving domestic and international compliance frameworks with confidence.",
+      "Devendra plays a pivotal role in the firm's FEMA and International Taxation practice, offering guidance on cross-border transactions, foreign exchange regulations, international tax matters, and taxation of expatriates. Beyond his professional expertise, he is a trusted mentor and guiding force within the firm, sharing his extensive knowledge and experience with colleagues across practice areas. His thoughtful counsel, balanced judgement, and commitment to professional excellence have made him a valued source of guidance for the firm's leadership team. Through his mentorship and hands-on approach, he continues to nurture professional talent, encourage sound decision-making, and strengthen the firm's culture of integrity, collaboration, and continuous learning.",
     ],
   },
   {
@@ -77,6 +64,20 @@ export const partners = [
       "Abilash has extensive practical experience in GST proceedings, including departmental inspections, search and seizure operations, show-cause notices, and detention of goods and conveyances. His dual qualification in finance and law enables him to approach indirect tax matters from both technical and legal perspectives, supporting clients in navigating complex regulatory issues and resolving disputes effectively. He is also actively involved in professional and industry associations, contributing to representations before government authorities to address practical challenges in GST administration and advocate for a more business-friendly tax framework.",
     ],
   },
+  {
+    id: "manikanteshwarudu-thoka",
+    name: "CA Manikanteshwarudu Thoka",
+    short_name: "CA Mani",
+    image: "/leadership/ca-mani.jpg",
+    imagePosition: "50% 19%",
+    designation: "B.COM, FCA",
+    practice: "Audit and International Taxation",
+    bio: [
+      "CA Manikanteshwarudu Thoka is a Fellow Chartered Accountant (FCA) with extensive experience in auditing, accounting, financial reporting, and regulatory compliance. As the head of the firm's Audit practice, he plays a key role in overseeing audit engagements and ensuring the quality, accuracy, and professional integrity of audit deliverables. With a strong understanding of financial systems, accounting principles, and applicable statutory requirements, he brings a methodical and detail-oriented approach to evaluating financial statements, assessing compliance, and addressing complex audit matters. His expertise and commitment to professional standards contribute to the delivery of reliable and insightful audit services across the firm's diverse client base.",
+      "In addition to his audit expertise, Mani has substantial knowledge of international taxation, including cross-border tax regulations, tax planning, and international tax reporting requirements. He helps clients navigate complex tax and compliance matters arising from international business operations, bringing a practical perspective to evolving regulatory requirements. In his leadership role, he oversees the audit function and is responsible for the finalisation of audit assignments, providing technical guidance to engagement teams and reviewing deliverables to maintain consistency and quality. His analytical approach, attention to detail, and focus on professional excellence make him an integral part of the firm's leadership and client service capabilities.",
+    ],
+  },
+  
   {
     id: "prashanth-reddy-yalala",
     name: "CA Prashanth Reddy Yalala",
