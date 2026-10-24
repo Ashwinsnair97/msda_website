@@ -6,7 +6,9 @@ import Button from "@/components/ui/Button";
 import { mailtoHref, site } from "@/data/site";
 import useIsScrolled from "@/lib/useIsScrolled";
 
-const glassSurface = "bg-white/20 backdrop-blur-lg";
+// Solid rather than blurred glass: a fixed backdrop blur re-renders on every
+// scroll frame and was costing noticeable FPS.
+const navSurface = "bg-main-background";
 
 function NavLink({ href, onClick, children }) {
   return (
@@ -50,7 +52,7 @@ export default function Navbar() {
       <nav
         className={`w-full transition-all duration-500 ${
           isScrolled
-            ? `${glassSurface} py-2 shadow-md md:py-3`
+            ? `${navSurface} py-2 shadow-md md:py-3`
             : "bg-transparent py-4 md:py-6"
         }`}
       >
@@ -97,7 +99,7 @@ export default function Navbar() {
         id="mobile-navigation"
         aria-hidden={!isMenuOpen}
         inert={!isMenuOpen}
-        className={`max-h-0 overflow-hidden text-sm font-medium opacity-0 transition-[max-height,opacity] duration-500 ease-in-out md:hidden ${glassSurface} ${
+        className={`max-h-0 overflow-hidden text-sm font-medium opacity-0 transition-[max-height,opacity] duration-500 ease-in-out md:hidden ${navSurface} ${
           isScrolled ? "shadow-md" : ""
         } ${isMenuOpen ? "max-h-20 opacity-100" : ""}`}
       >

@@ -52,7 +52,7 @@ export default function WhoWeServeRibbon() {
       aria-label="Who we serve"
       inert={!isScrolled}
       style={{ transform }}
-      className={`fixed bottom-6 right-0 z-40 flex items-end transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+      className={`fixed bottom-6 right-0 z-40 flex items-end will-change-transform transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
         isScrolled ? "opacity-100" : "opacity-0"
       }`}
     >

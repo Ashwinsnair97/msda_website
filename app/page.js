@@ -1,5 +1,5 @@
 import Link from "next/link";
-import heroImage from "@/public/msdaco_hero_page.png";
+import heroImage from "@/public/msdaco_hero_page.jpg";
 import ContactSection from "@/components/contact/ContactSection";
 import PartnerCard from "@/components/partners/PartnerCard";
 import WhoWeServeRibbon from "@/components/sections/WhoWeServeRibbon";
