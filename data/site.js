@@ -1,5 +1,5 @@
 export const site = {
-  name: "MSDA & CO",
+  name: "MSDA & Co",
   navBrand: "MSDA & Co",
   descriptor: "CHARTERED ACCOUNTANTS",
   email: "contact@msda.co",

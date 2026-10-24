@@ -6,6 +6,7 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { overviewPoints } from "@/data/about";
 import { partners } from "@/data/partners";
+import { site } from "@/data/site";
 import { formatIndex } from "@/lib/format";
 
 const ENABLE_PREMIUM_PARTNER_CAROUSEL = true;
@@ -13,7 +14,7 @@ const ENABLE_PREMIUM_PARTNER_CAROUSEL = true;
 export const metadata = {
   title: "About",
   description:
-    "Meet the chartered accountants and specialists behind MSDA & CO's taxation, audit, corporate law and advisory practice.",
+    `Meet the chartered accountants and specialists behind ${site.name}'s taxation, audit, corporate law and advisory practice.`,
 };
 
 export default function AboutPage() {
@@ -22,14 +23,14 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About the firm"
         title="Built on experience. Guided by professional expertise."
-        intro="MSDA & CO brings together experienced chartered accountants and specialists across taxation, audit, corporate law and advisory. Our multidisciplinary capabilities support businesses and individuals in navigating complex financial and regulatory requirements."
+        intro={`${site.name} brings together experienced chartered accountants and specialists across taxation, audit, corporate law and advisory. Our multidisciplinary capabilities support businesses and individuals in navigating complex financial and regulatory requirements.`}
       >
         <p className="mt-5 text-[17px] font-medium leading-[1.6] text-primary">
           Practical guidance. Bespoke solutions. Professional perspective.
         </p>
       </PageHero>
 
-      <section className="bg-white pb-16 pt-20 lg:pb-[72px] lg:pt-[88px]">
+      {/* <section className="bg-white pb-16 pt-20 lg:pb-[72px] lg:pt-[88px]">
         <div className="site-container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-14">
           <SectionHeader
             title="A multidisciplinary approach to professional services."
@@ -53,11 +54,11 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <ApproachSection />
+      {/* <ApproachSection /> */}
 
-      <section className="bg-main-background pb-16 pt-20 lg:pb-[80px] lg:pt-[104px]">
+      <section id="our-people" className="bg-white pb-16 pt-20 lg:pb-[80px] lg:pt-[104px]">
         <div className="site-container">
           <SectionHeader
             eyebrow="Our people"

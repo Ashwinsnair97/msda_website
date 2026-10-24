@@ -257,6 +257,54 @@
   .hero-copy {
     max-width: 39rem;
   }
+
+  /* Hero overlay anchored to the text column's right edge (container offset
+     + the 42rem max-w-2xl column) rather than to the viewport, so the solid
+     part slides right as the page narrows and always sits behind the copy.
+     On a 1440px desktop the stops land at ~30/43/52/63/70%: near-solid
+     behind the copy, then a progressive fade so the books and desk keep
+     their full contrast. */
+  .hero-scrim {
+    --hero-text-edge: calc(
+      max(var(--page-gutter), (100% - var(--content-width)) / 2) + 42rem
+    );
+    background-image: linear-gradient(
+      to right,
+      var(--warm-ivory) 0,
+      color-mix(in srgb, var(--warm-ivory) 98%, transparent)
+        calc(var(--hero-text-edge) - 18rem),
+      color-mix(in srgb, var(--warm-ivory) 88%, transparent)
+        calc(var(--hero-text-edge) - 6rem),
+      color-mix(in srgb, var(--warm-ivory) 52%, transparent)
+        calc(var(--hero-text-edge) + 2rem),
+      color-mix(in srgb, var(--warm-ivory) 12%, transparent)
+        calc(var(--hero-text-edge) + 12rem),
+      transparent calc(var(--hero-text-edge) + 18rem)
+    );
+  }
+
+  /* Softens the photo's own detail behind the copy only; it clears well
+     before the books so their detail stays sharp. */
+  .hero-scrim::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    mask-image: linear-gradient(
+      to right,
+      #000 calc(var(--hero-text-edge) - 6rem),
+      transparent calc(var(--hero-text-edge) + 8rem)
+    );
+  }
+
+  /* Phones: the copy spans the full width, so use an even, stronger wash
+     rather than a fade. */
+  @media (max-width: 639px) {
+    .hero-scrim {
+      background-image: none;
+      background-color: color-mix(in srgb, var(--warm-ivory) 88%, transparent);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

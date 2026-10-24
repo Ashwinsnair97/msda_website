@@ -11,7 +11,6 @@ export default function PartnerSlide({
   onSelect,
   onOpenProfile,
 }) {
-  const isColour = isActive && hasEntered;
   const [summary] = partner.bio ?? [];
 
   return (
@@ -25,22 +24,20 @@ export default function PartnerSlide({
           : "w-[var(--card)] shadow-[0_0_0_rgba(16,27,53,0)]"
       }`}
     >
+      {/* Clicking an inactive portrait brings it forward; clicking the
+          active one opens the full profile. */}
       <button
         type="button"
-        onClick={onSelect}
-        aria-pressed={isActive}
-        aria-label={`${partner.name}${isActive ? ", selected" : ""}`}
-        className="focus-ring absolute inset-0 h-full w-full [--focus-ring-offset:-3px]"
+        onClick={isActive ? onOpenProfile : onSelect}
+        aria-label={isActive ? `View profile of ${partner.name}` : partner.name}
+        className="focus-ring absolute inset-0 h-full w-full cursor-pointer [--focus-ring-offset:-3px]"
       >
         <PartnerPortrait
           src={partner.image}
           name={partner.name}
           position={partner.imagePosition}
+          alt=""
           sizes="(max-width: 800px) 264px, (max-width: 1236px) 33vw, 408px"
-          className={`transition-[filter] ease-in-out motion-reduce:duration-0 ${INTRO_DELAY} ${
-            isIntroPlaying ? "duration-[900ms]" : "duration-500"
-          } ${isColour ? "grayscale-0" : "grayscale group-hover:grayscale-[65%]"}`}
-          style={introDelayStyle(isIntroPlaying, 350)}
         />
       </button>
 
@@ -92,7 +89,7 @@ export default function PartnerSlide({
               <button
                 type="button"
                 onClick={onOpenProfile}
-                className="focus-ring mb-1 mt-2 inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white underline decoration-accent-soft underline-offset-4 [--focus-ring-color:var(--white)] [--focus-ring-offset:2px] sm:text-xs"
+                className="focus-ring mb-1 mt-2 inline-flex cursor-pointer items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white underline decoration-accent-soft underline-offset-4 [--focus-ring-color:var(--white)] [--focus-ring-offset:2px] sm:text-xs"
               >
                 Know more
                 <ArrowUpRight size={13} aria-hidden="true" />

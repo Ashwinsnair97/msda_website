@@ -22,7 +22,7 @@ export const metadata = {
     default: `${site.name} | Chartered Accountants`,
   },
   description:
-    "MSDA & CO is a trusted professional services partner with two decades of experience.",
+    `${site.name} is a trusted professional services partner with two decades of experience.`,
 };
 
 export default function RootLayout({ children }) {

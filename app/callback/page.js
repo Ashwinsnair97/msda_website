@@ -1,9 +1,10 @@
 import CallbackForm from "@/components/contact/CallbackForm";
 import { Eyebrow } from "@/components/ui/SectionHeader";
+import { site } from "@/data/site";
 
 export const metadata = {
   title: "Request a Callback",
-  description: "Share your details with MSDA & CO to request a callback.",
+  description: `Share your details with ${site.name} to request a callback.`,
 };
 
 export default function CallbackPage() {

@@ -4,13 +4,13 @@ import Button from "@/components/ui/Button";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { clientSegments, services } from "@/data/services";
-import { mailtoHref } from "@/data/site";
+import { mailtoHref, site } from "@/data/site";
 import { formatIndex } from "@/lib/format";
 
 export const metadata = {
   title: "Services",
   description:
-    "Audit and assurance, direct and indirect taxation, international taxation and FEMA, corporate law, virtual CFO, transaction advisory and accounting outsourcing from MSDA & CO.",
+    `Audit and assurance, direct and indirect taxation, international taxation and FEMA, corporate law, virtual CFO, transaction advisory and accounting outsourcing from ${site.name}.`,
 };
 
 export default function ServicesPage() {
@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Our services"
         title="Expertise for every stage of your business."
-        intro="From business structuring and statutory compliance to audit, taxation and transaction advisory, MSDA & CO provides professional support tailored to your requirements."
+        intro={`From business structuring and statutory compliance to audit, taxation and transaction advisory, ${site.name} provides professional support tailored to your requirements.`}
       >
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <Button href="#practice-areas" icon="↓">

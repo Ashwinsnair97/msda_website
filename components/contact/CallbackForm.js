@@ -83,7 +83,7 @@ export default function CallbackForm() {
           required
         />
         <span>
-          I consent to MSDA &amp; CO contacting me about this request.
+          I consent to {site.name} contacting me about this request.
           <span aria-hidden="true"> *</span>
         </span>
       </label>

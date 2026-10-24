@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "@/components/ui/Button";
 import { mailtoHref, site } from "@/data/site";
+import useIsScrolled from "@/lib/useIsScrolled";
 
 const glassSurface = "bg-white/20 backdrop-blur-lg";
 
@@ -40,20 +41,9 @@ function MenuToggle({ isOpen, onToggle }) {
 }
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const isScrolled = useIsScrolled();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full font-body text-primary">

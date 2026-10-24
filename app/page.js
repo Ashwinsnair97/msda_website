@@ -1,14 +1,14 @@
 import Link from "next/link";
-import heroImage from "@/public/CA_home_page_1.png";
+import heroImage from "@/public/msdaco_hero_page.png";
 import ContactSection from "@/components/contact/ContactSection";
 import PartnerCard from "@/components/partners/PartnerCard";
+import WhoWeServeRibbon from "@/components/sections/WhoWeServeRibbon";
 import Button from "@/components/ui/Button";
 import SectionHeader, { Eyebrow } from "@/components/ui/SectionHeader";
-import { clientSegments } from "@/data/clientSegments";
 import { firmHighlights } from "@/data/home";
 import { partners } from "@/data/partners";
 import { serviceHref, services } from "@/data/services";
-import { mailtoHref } from "@/data/site";
+import { mailtoHref, site } from "@/data/site";
 import { formatIndex } from "@/lib/format";
 
 const textLinkClasses =
@@ -21,7 +21,7 @@ export default function Home() {
         className="relative flex min-h-[620px] items-center overflow-hidden bg-cover bg-center pb-20 pt-36 lg:min-h-[680px]"
         style={{ backgroundImage: `url(${heroImage.src})` }}
       >
-        <div className="absolute inset-0 bg-main-background/80 sm:bg-transparent sm:bg-gradient-to-r sm:from-main-background/90 sm:via-main-background/30 sm:to-main-background/0" />
+        <div aria-hidden="true" className="hero-scrim absolute inset-0" />
         <div className="site-container relative">
           <div className="max-w-2xl">
             <Eyebrow className="mb-4">Chartered Accountants</Eyebrow>
@@ -30,8 +30,8 @@ export default function Home() {
               <span className="sm:block">Professional Service</span>{" "}
               <span className="sm:block">Experience</span>
             </h1>
-            <p className="hero-copy mt-5 text-[length:var(--text-hero-body)] leading-[1.6] text-secondary-text">
-              MSDA &amp; CO provides multidisciplinary expertise across
+            <p className="hero-copy mt-5 text-[length:var(--text-hero-body)] leading-[1.6] text-body-text">
+              {site.name} provides multidisciplinary expertise across
               accounting, taxation, audit, compliance and advisory services,
               helping businesses navigate regulatory requirements and make
               informed decisions.
@@ -131,32 +131,13 @@ export default function Home() {
               />
             ))}
           </div>
-          <Link href="/about" className={`${textLinkClasses} mt-8 inline-flex items-center gap-3`}>
+          <Link href="/about#our-people" className={`${textLinkClasses} mt-8 inline-flex items-center gap-3`}>
             Meet Our Team <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-[72px]">
-        <div className="site-container">
-          <SectionHeader
-            eyebrow="Who we serve"
-            title="Expertise for diverse business needs."
-            intro="Our multidisciplinary capabilities support organisations and individuals across a range of sectors and business needs."
-            introClassName="max-w-[720px]"
-          />
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {clientSegments.map((segment) => (
-              <li
-                key={segment}
-                className="border-t border-subtle-border py-5 pr-6 text-[15px] leading-relaxed text-primary sm:py-6"
-              >
-                {segment}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <WhoWeServeRibbon />
 
       <ContactSection
         eyebrow="Let's talk"
