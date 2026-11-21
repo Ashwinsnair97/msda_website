@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Button from "@/components/ui/Button";
@@ -56,21 +57,30 @@ export default function Navbar() {
             : "bg-transparent py-4 md:py-6"
         }`}
       >
-        <div className="site-container flex items-center justify-between">
+        <div className="site-container flex items-center justify-between gap-4">
+          {/* The logo stretches to the row height, and its negative margins
+              cancel the nav's vertical padding so it fills (almost) the whole
+              bar and shrinks with it on scroll. The image is `fill`, so it adds
+              no intrinsic height of its own. */}
           <Link
             href="/"
-            className="flex flex-col items-start font-heading text-xl font-bold tracking-tight sm:text-2xl"
+            aria-label={site.navBrand}
+            className={`relative flex-1 self-stretch transition-all duration-500 ${
+              isScrolled ? "-my-0 md:-my-1" : "-my-1 md:-my-2"
+            }`}
           >
-            <span>{site.navBrand}</span>
-            <span
-              aria-hidden={isScrolled}
-              className={`block overflow-hidden font-body text-sm font-normal tracking-tight transition-all duration-500 sm:text-base ${
-                isScrolled
-                  ? "max-h-0 opacity-0 delay-100"
-                  : "max-h-8 opacity-100 delay-0"
-              }`}
-            >
-              {site.descriptor.toLowerCase()}
+            {/* Inset 6% top and bottom: the logo renders at 88% of the
+                available height in both states. */}
+            <span className="absolute inset-x-0 inset-y-[6%]">
+              <Image
+                src="/msda_logo.png"
+                alt={site.navBrand}
+                fill
+                sizes="(min-width: 768px) 320px, 220px"
+                loading="eager"
+                fetchPriority="high"
+                className="object-contain object-left"
+              />
             </span>
           </Link>
 
