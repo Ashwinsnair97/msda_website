@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import CarouselControls from "./CarouselControls";
+import { ANIMATIONS_ENABLED } from "@/config/animations";
 import PartnerMobileList from "./PartnerMobileList";
 import PartnerProfileModal from "./PartnerProfileModal";
 import PartnerSlide from "./PartnerSlide";
@@ -15,14 +16,16 @@ const TRACK_VARS =
 export default function AnimatedPartnerCarousel({ partners }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [hasEntered, setHasEntered] = useState(false);
+  // With animations switched off the cards start in place and the
+  // entrance never plays.
+  const [hasEntered, setHasEntered] = useState(!ANIMATIONS_ENABLED);
   const [isIntroPlaying, setIsIntroPlaying] = useState(false);
   const carouselRef = useRef(null);
 
   // Play the entrance once, the first time the carousel scrolls into view.
   useEffect(() => {
     const element = carouselRef.current;
-    if (!element) return;
+    if (!ANIMATIONS_ENABLED || !element) return;
 
     let timeoutId;
     const observer = new IntersectionObserver(

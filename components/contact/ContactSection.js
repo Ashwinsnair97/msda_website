@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/animations";
 import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { mailtoHref, site } from "@/data/site";
@@ -26,16 +27,18 @@ export default function ContactSection({ eyebrow, title, intro, tone = "dark" })
   return (
     <section id="contact" className={`scroll-mt-24 py-12 sm:py-16 ${styles.section}`}>
       <div className="site-container grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center">
-        <SectionHeader
-          tone={tone}
-          eyebrow={eyebrow}
-          title={title}
-          intro={intro}
-          className="max-w-3xl"
-          introClassName="max-w-2xl"
-        />
+        <Reveal>
+          <SectionHeader
+            tone={tone}
+            eyebrow={eyebrow}
+            title={title}
+            intro={intro}
+            className="max-w-3xl"
+            introClassName="max-w-2xl"
+          />
+        </Reveal>
 
-        <div className="flex flex-col items-start gap-5 lg:items-end">
+        <Reveal delay={0.1} className="flex flex-col items-start gap-5 lg:items-end">
           <div className="lg:text-right">
             <p className={`text-sm font-medium ${styles.label}`}>Write to us</p>
             <a
@@ -62,7 +65,7 @@ export default function ContactSection({ eyebrow, title, intro, tone = "dark" })
               Request a Callback
             </Button>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

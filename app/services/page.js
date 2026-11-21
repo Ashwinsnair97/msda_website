@@ -1,3 +1,4 @@
+import { Reveal, StaggerContainer, StaggerItem } from "@/components/animations";
 import ContactSection from "@/components/contact/ContactSection";
 import ApproachSection from "@/components/sections/ApproachSection";
 import Button from "@/components/ui/Button";
@@ -33,15 +34,14 @@ export default function ServicesPage() {
 
       <section id="practice-areas" className="scroll-mt-24 bg-white py-16 lg:py-20">
         <div className="site-container">
-          <SectionHeader
-            title="Our practice areas"
-            intro="Explore our services"
-            className="mb-6"
-          />
+          <Reveal className="mb-6">
+            <SectionHeader title="Our practice areas" intro="Explore our services" />
+          </Reveal>
 
           <div className="border-b border-subtle-border">
             {services.map((service, index) => (
-              <article
+              <Reveal
+                as="article"
                 key={service.id}
                 id={service.id}
                 className="grid scroll-mt-28 gap-5 border-t border-subtle-border py-7 md:grid-cols-[1.08fr_0.92fr] md:gap-10 lg:gap-14 lg:py-8"
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -79,25 +79,26 @@ export default function ServicesPage() {
 
       <section className="bg-main-background py-16 lg:py-20">
         <div className="site-container">
-          <SectionHeader
-            eyebrow="Who we serve"
-            title="Support for every kind of client"
-            intro={clientSegments.intro}
-            className="mb-8 max-w-[48rem]"
-          />
+          <Reveal className="mb-8 max-w-[48rem]">
+            <SectionHeader
+              eyebrow="Who we serve"
+              title="Support for every kind of client"
+              intro={clientSegments.intro}
+            />
+          </Reveal>
 
-          <div className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
             {clientSegments.items.map((area) => (
-              <article key={area.title} className="border-t border-subtle-border py-5 lg:py-6">
+              <StaggerItem as="article" key={area.title} className="border-t border-subtle-border py-5 lg:py-6">
                 <h3 className="text-base font-semibold leading-[1.4] text-primary">
                   {area.title}
                 </h3>
                 <p className="mt-2 text-sm leading-[1.65] text-secondary-text">
                   {area.description}
                 </p>
-              </article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 

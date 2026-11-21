@@ -1,5 +1,6 @@
 import Link from "next/link";
 import heroImage from "@/public/msdaco_hero_page.jpg";
+import { Reveal, StaggerContainer, StaggerItem } from "@/components/animations";
 import ContactSection from "@/components/contact/ContactSection";
 import PartnerCard from "@/components/partners/PartnerCard";
 import WhoWeServeRibbon from "@/components/sections/WhoWeServeRibbon";
@@ -49,9 +50,9 @@ export default function Home() {
       </section>
 
       <section aria-label="Firm at a glance" className="bg-main-background text-primary-text">
-        <div className="site-container grid grid-cols-1 divide-y divide-subtle-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <StaggerContainer className="site-container grid grid-cols-1 divide-y divide-subtle-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {firmHighlights.map((highlight) => (
-            <div
+            <StaggerItem
               key={highlight.figure}
               className="flex flex-col justify-center py-8 sm:px-8 sm:py-9 lg:first:pl-0"
             >
@@ -61,14 +62,14 @@ export default function Home() {
               <p className="mt-1 text-[length:var(--text-stat-label)] text-secondary-text">
                 {highlight.label}
               </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
 
       <section className="bg-white pb-[72px] pt-16 sm:pt-[72px]">
         <div className="site-container">
-          <div className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <Reveal className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <SectionHeader
               eyebrow="How we can help"
               title="Our Services"
@@ -80,57 +81,60 @@ export default function Home() {
             >
               View all services <span aria-hidden="true">→</span>
             </Link>
-          </div>
-          <div className="divide-y divide-subtle-border border-y border-subtle-border">
+          </Reveal>
+          <StaggerContainer className="divide-y divide-subtle-border border-y border-subtle-border">
             {services.map((service, index) => (
-              <Link
-                key={service.id}
-                href={serviceHref(service.id)}
-                className="focus-ring group flex items-center justify-between gap-5 py-5 text-primary transition-colors sm:py-6"
-              >
-                <span className="flex min-w-0 items-start gap-4 sm:gap-6">
-                  <span className="pt-0.5 text-[13px] font-semibold tracking-wider text-accent">
-                    {formatIndex(index)}
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-lg font-semibold leading-snug transition-colors group-hover:text-accent">
-                      {service.title}
+              <StaggerItem key={service.id}>
+                <Link
+                  href={serviceHref(service.id)}
+                  className="focus-ring group flex items-center justify-between gap-5 py-5 text-primary transition-colors sm:py-6"
+                >
+                  <span className="flex min-w-0 items-start gap-4 sm:gap-6">
+                    <span className="pt-0.5 text-[13px] font-semibold tracking-wider text-accent">
+                      {formatIndex(index)}
                     </span>
-                    <span className="mt-1.5 block text-sm leading-[1.5] text-secondary-text sm:text-[15px]">
-                      {service.summary}
+                    <span className="min-w-0">
+                      <span className="block text-lg font-semibold leading-snug transition-colors group-hover:text-accent">
+                        {service.title}
+                      </span>
+                      <span className="mt-1.5 block text-sm leading-[1.5] text-secondary-text sm:text-[15px]">
+                        {service.summary}
+                      </span>
                     </span>
                   </span>
-                </span>
-                <span aria-hidden="true" className="shrink-0 transition-transform duration-200 group-hover:translate-x-1">
-                  →
-                </span>
-              </Link>
+                  <span aria-hidden="true" className="shrink-0 transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       <section className="bg-main-background py-12 sm:py-[72px]">
         <div className="site-container">
-          <SectionHeader
-            eyebrow="Our people"
-            title="Meet the people behind our expertise."
-            intro="Our leadership brings together experience across taxation, audit, corporate law and international advisory."
-            className="mb-10 max-w-[700px]"
-          />
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <Reveal className="mb-10 max-w-[700px]">
+            <SectionHeader
+              eyebrow="Our people"
+              title="Meet the people behind our expertise."
+              intro="Our leadership brings together experience across taxation, audit, corporate law and international advisory."
+            />
+          </Reveal>
+          <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {partners.slice(0, 3).map((partner) => (
-              <PartnerCard
-                key={partner.id}
-                variant="preview"
-                name={partner.name}
-                designation={partner.designation}
-                practice={partner.practice}
-                image={partner.image}
-                imagePosition={partner.imagePosition}
-              />
+              <StaggerItem key={partner.id}>
+                <PartnerCard
+                  variant="preview"
+                  name={partner.name}
+                  designation={partner.designation}
+                  practice={partner.practice}
+                  image={partner.image}
+                  imagePosition={partner.imagePosition}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
           <Link href="/about#our-people" className={`${textLinkClasses} mt-8 inline-flex items-center gap-3`}>
             Meet Our Team <span aria-hidden="true">→</span>
           </Link>

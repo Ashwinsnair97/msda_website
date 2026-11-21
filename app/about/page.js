@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/animations";
 import ContactSection from "@/components/contact/ContactSection";
 import ApproachSection from "@/components/sections/ApproachSection";
 import AnimatedPartnerCarousel from "@/components/partners/AnimatedPartnerCarousel";
@@ -60,13 +61,15 @@ export default function AboutPage() {
 
       <section id="our-people" className="bg-white pb-16 pt-20 lg:pb-[80px] lg:pt-[104px]">
         <div className="site-container">
-          <SectionHeader
-            eyebrow="Our people"
-            title="Experience across disciplines. Expertise in practice."
-            intro="Our leadership brings together experience across taxation, audit, corporate law, international taxation and public sector advisory."
-            titleClassName="max-w-[52rem]"
-            introClassName="max-w-[48rem]"
-          />
+          <Reveal>
+            <SectionHeader
+              eyebrow="Our people"
+              title="Experience across disciplines. Expertise in practice."
+              intro="Our leadership brings together experience across taxation, audit, corporate law, international taxation and public sector advisory."
+              titleClassName="max-w-[52rem]"
+              introClassName="max-w-[48rem]"
+            />
+          </Reveal>
 
           <div className="mt-10">
             {ENABLE_PREMIUM_PARTNER_CAROUSEL ? (

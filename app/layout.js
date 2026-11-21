@@ -3,6 +3,7 @@ import "./globals.css";
 import ComplianceNotice from "@/components/layout/ComplianceNotice";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import { ANIMATIONS_ENABLED } from "@/config/animations";
 import { site } from "@/data/site";
 
 const inter = Inter({
@@ -32,6 +33,13 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${dmSerifDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {ANIMATIONS_ENABLED && (
+          // Scroll reveals start hidden in the server HTML; without
+          // JavaScript nothing would reveal them, so show them outright.
+          <noscript>
+            <style>{"[data-reveal]{opacity:1!important;transform:none!important}"}</style>
+          </noscript>
+        )}
         <Navbar />
         {children}
         <Footer />

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --midnight-navy: #101b35;
+  --midnight-navy: #233b7c;
   --burnt-copper: #a84b12;
   --copper-glow: #e5a06e;
   --copper-sand: #e8b089;
@@ -15,7 +15,7 @@
   --dark-section-border: #334056;
   --white: #ffffff;
 
-  --button-primary: #101b35;
+  --button-primary: #233b7c;
   --button-primary-hover: #1b2a49;
   --button-primary-active: #0a1225;
   --button-secondary-hover: #eeeae2;
@@ -314,6 +314,14 @@
 
   .button__spinner {
     animation: none;
+  }
+
+  /* Scroll reveals (components/animations) start hidden in the server HTML.
+     Reduced-motion users see the content in place straight away;
+     !important outranks Motion's inline styles. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
