@@ -64,7 +64,7 @@ export default function ComplianceNotice() {
     <aside
       aria-label="Professional conduct notice"
       aria-live="polite"
-      className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-h-[calc(100dvh-2rem)] max-w-4xl overflow-y-auto rounded-lg border border-subtle-border bg-white p-5 text-primary shadow-xl sm:inset-x-6 sm:p-6"
+      className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-h-[calc(100dvh-2rem)] max-w-4xl overflow-y-auto rounded-lg border border-line bg-surface p-5 text-fg shadow-xl sm:inset-x-6 sm:p-6"
     >
       <div className="text-sm leading-relaxed">
         <p>

@@ -1,0 +1,27 @@
+/*
+ * Keyboard focus outline. Colour follows --focus-ring-color, so a section can
+ * switch every ring inside it by setting the variable once (.tone-inverse
+ * does this).
+ */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset, 4px);
+  }
+}
+
+/*
+ * Dark context: dark bands (navy sections, footer) and text laid over photos.
+ * It re-points the text, accent, border and focus roles for everything inside,
+ * so components keep using text-fg, text-fg-muted, text-accent and border-line
+ * and get the right colour without a `tone` prop.
+ */
+@utility tone-inverse {
+  --fg: var(--fg-inverse);
+  --fg-copy: var(--fg-inverse-muted);
+  --fg-muted: var(--fg-inverse-muted);
+  --accent: var(--accent-inverse);
+  --line: var(--line-inverse);
+  --focus-ring-color: var(--accent-inverse);
+  color: var(--fg);
+}

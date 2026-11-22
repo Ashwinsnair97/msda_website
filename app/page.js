@@ -5,6 +5,7 @@ import ContactSection from "@/components/contact/ContactSection";
 import PartnerCard from "@/components/partners/PartnerCard";
 import WhoWeServeRibbon from "@/components/sections/WhoWeServeRibbon";
 import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
 import SectionHeader, { Eyebrow } from "@/components/ui/SectionHeader";
 import { firmHighlights } from "@/data/home";
 import { partners } from "@/data/partners";
@@ -13,11 +14,11 @@ import { mailtoHref, site } from "@/data/site";
 import { formatIndex } from "@/lib/format";
 
 const textLinkClasses =
-  "focus-ring text-sm font-semibold text-primary transition-colors hover:text-accent";
+  "focus-ring text-sm font-semibold text-fg transition-colors hover:text-accent";
 
 export default function Home() {
   return (
-    <main className="bg-main-background text-primary-text">
+    <main className="bg-surface-page text-fg">
       <section
         className="relative flex min-h-[620px] items-center overflow-hidden bg-cover bg-center pb-20 pt-36 lg:min-h-[680px]"
         style={{ backgroundImage: `url(${heroImage.src})` }}
@@ -26,12 +27,12 @@ export default function Home() {
         <div className="site-container relative">
           <div className="max-w-2xl">
             <Eyebrow className="mb-4">Chartered Accountants</Eyebrow>
-            <h1 className="max-w-4xl font-heading text-[length:var(--text-hero)] font-medium leading-[1.03] tracking-tight text-primary">
+            <h1 className="max-w-4xl font-heading text-hero font-medium leading-[1.03] tracking-tight text-fg">
               <span className="sm:block">Two Decades of</span>{" "}
               <span className="sm:block">Professional Service</span>{" "}
               <span className="sm:block">Experience</span>
             </h1>
-            <p className="hero-copy mt-5 text-[length:var(--text-hero-body)] leading-[1.6] text-body-text">
+            <p className="hero-copy mt-5 text-hero-body leading-[1.6] text-fg-copy">
               {site.name} provides multidisciplinary expertise across
               accounting, taxation, audit, compliance and advisory services,
               helping businesses navigate regulatory requirements and make
@@ -49,25 +50,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-label="Firm at a glance" className="bg-main-background text-primary-text">
-        <StaggerContainer className="site-container grid grid-cols-1 divide-y divide-subtle-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+      <Section tone="page" aria-label="Firm at a glance">
+        <StaggerContainer className="site-container grid grid-cols-1 divide-y divide-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {firmHighlights.map((highlight) => (
             <StaggerItem
               key={highlight.figure}
               className="flex flex-col justify-center py-8 sm:px-8 sm:py-9 lg:first:pl-0"
             >
-              <p className="text-[length:var(--text-stat)] font-semibold tracking-tight">
+              <p className="text-stat font-semibold tracking-tight">
                 {highlight.figure}
               </p>
-              <p className="mt-1 text-[length:var(--text-stat-label)] text-secondary-text">
+              <p className="mt-1 text-stat-label text-fg-muted">
                 {highlight.label}
               </p>
             </StaggerItem>
           ))}
         </StaggerContainer>
-      </section>
+      </Section>
 
-      <section className="bg-white pb-[72px] pt-16 sm:pt-[72px]">
+      <Section tone="surface" className="pb-[72px] pt-16 sm:pt-[72px]">
         <div className="site-container">
           <Reveal className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <SectionHeader
@@ -82,12 +83,12 @@ export default function Home() {
               View all services <span aria-hidden="true">→</span>
             </Link>
           </Reveal>
-          <StaggerContainer className="divide-y divide-subtle-border border-y border-subtle-border">
+          <StaggerContainer className="divide-y divide-line border-y border-line">
             {services.map((service, index) => (
               <StaggerItem key={service.id}>
                 <Link
                   href={serviceHref(service.id)}
-                  className="focus-ring group flex items-center justify-between gap-5 py-5 text-primary transition-colors sm:py-6"
+                  className="focus-ring group flex items-center justify-between gap-5 py-5 text-fg transition-colors sm:py-6"
                 >
                   <span className="flex min-w-0 items-start gap-4 sm:gap-6">
                     <span className="pt-0.5 text-[13px] font-semibold tracking-wider text-accent">
@@ -97,7 +98,7 @@ export default function Home() {
                       <span className="block text-lg font-semibold leading-snug transition-colors group-hover:text-accent">
                         {service.title}
                       </span>
-                      <span className="mt-1.5 block text-sm leading-[1.5] text-secondary-text sm:text-[15px]">
+                      <span className="mt-1.5 block text-sm leading-[1.5] text-fg-muted sm:text-[15px]">
                         {service.summary}
                       </span>
                     </span>
@@ -110,9 +111,9 @@ export default function Home() {
             ))}
           </StaggerContainer>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-main-background py-12 sm:py-[72px]">
+      <Section tone="page" className="py-12 sm:py-[72px]">
         <div className="site-container">
           <Reveal className="mb-10 max-w-[700px]">
             <SectionHeader
@@ -139,7 +140,7 @@ export default function Home() {
             Meet Our Team <span aria-hidden="true">→</span>
           </Link>
         </div>
-      </section>
+      </Section>
 
       <WhoWeServeRibbon />
 

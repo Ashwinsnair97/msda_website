@@ -15,7 +15,7 @@ export default function PartnerCard({
 
   return (
     <article>
-      <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-[5px] border border-subtle-border bg-white text-center">
+      <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-card border border-line bg-surface text-center">
         {image ? (
           <PartnerPortrait
             src={image}
@@ -27,13 +27,13 @@ export default function PartnerCard({
           <span
             role="img"
             aria-label={`Portrait placeholder for ${name}`}
-            className="px-6 text-sm text-secondary-text"
+            className="px-6 text-sm text-fg-muted"
           >
             Approved portrait pending
           </span>
         )}
       </div>
-      <h3 className="mb-1.5 mt-5 min-h-[1.75rem] text-[19px] font-semibold leading-[1.35] text-primary">
+      <h3 className="mb-1.5 mt-5 min-h-[1.75rem] text-[19px] font-semibold leading-[1.35] text-fg">
         {href ? (
           <Link
             href={href}
@@ -45,12 +45,12 @@ export default function PartnerCard({
           name
         )}
       </h3>
-      <div className="min-h-12 text-sm leading-[1.5] text-secondary-text">
+      <div className="min-h-12 text-sm leading-[1.5] text-fg-muted">
         <p>{designation}</p>
         {practice && <p>{practice}</p>}
       </div>
       {isDetailed && description && (
-        <p className="mt-5 text-[0.9375rem] leading-[1.7] text-secondary-text">
+        <p className="mt-5 text-[0.9375rem] leading-[1.7] text-fg-muted">
           {description}
         </p>
       )}

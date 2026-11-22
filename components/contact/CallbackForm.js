@@ -7,7 +7,7 @@ import { mailtoHref, site } from "@/data/site";
 const assistanceAreas = [...services.map((service) => service.shortTitle), "Other"];
 
 const fieldClasses =
-  "mt-2 min-h-12 w-full rounded border border-subtle-border bg-white px-4 py-3 text-base text-primary outline-none transition focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-accent/30";
+  "mt-2 min-h-12 w-full rounded border border-line bg-surface px-4 py-3 text-base text-fg outline-none transition focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-accent/30";
 
 export default function CallbackForm() {
   function preventUnwiredSubmission(event) {
@@ -21,7 +21,7 @@ export default function CallbackForm() {
       onSubmit={preventUnwiredSubmission}
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-sm font-medium text-primary">
+        <label className="block text-sm font-medium text-fg">
           Name <span aria-hidden="true">*</span>
           <input
             className={fieldClasses}
@@ -31,8 +31,8 @@ export default function CallbackForm() {
             required
           />
         </label>
-        <label className="block text-sm font-medium text-primary">
-          Company name <span className="font-normal text-secondary-text">(optional)</span>
+        <label className="block text-sm font-medium text-fg">
+          Company name <span className="font-normal text-fg-muted">(optional)</span>
           <input
             className={fieldClasses}
             name="company"
@@ -40,7 +40,7 @@ export default function CallbackForm() {
             autoComplete="organization"
           />
         </label>
-        <label className="block text-sm font-medium text-primary">
+        <label className="block text-sm font-medium text-fg">
           Phone number <span aria-hidden="true">*</span>
           <input
             className={fieldClasses}
@@ -53,7 +53,7 @@ export default function CallbackForm() {
             required
           />
         </label>
-        <label className="block text-sm font-medium text-primary">
+        <label className="block text-sm font-medium text-fg">
           Area of assistance
           <select className={fieldClasses} name="assistance" defaultValue="">
             <option value="">Select an area</option>
@@ -64,8 +64,8 @@ export default function CallbackForm() {
             ))}
           </select>
         </label>
-        <label className="block text-sm font-medium text-primary sm:col-span-2">
-          Preferred callback time <span className="font-normal text-secondary-text">(optional)</span>
+        <label className="block text-sm font-medium text-fg sm:col-span-2">
+          Preferred callback time <span className="font-normal text-fg-muted">(optional)</span>
           <input
             className={fieldClasses}
             name="callback-time"
@@ -75,9 +75,9 @@ export default function CallbackForm() {
         </label>
       </div>
 
-      <label className="flex items-start gap-3 text-sm leading-6 text-secondary-text">
+      <label className="flex items-start gap-3 text-sm leading-6 text-fg-muted">
         <input
-          className="focus-ring mt-1 size-4 accent-primary [--focus-ring-offset:2px]"
+          className="focus-ring mt-1 size-4 accent-action [--focus-ring-offset:2px]"
           name="consent"
           type="checkbox"
           required
@@ -89,11 +89,11 @@ export default function CallbackForm() {
       </label>
 
       <Button disabled>Callback requests are not enabled yet</Button>
-      <p id="callback-form-status" className="text-sm leading-6 text-secondary-text">
+      <p id="callback-form-status" className="text-sm leading-6 text-fg-muted">
         This form is a preview and does not submit information. To contact the firm,
         email{" "}
         <a
-          className="focus-ring font-medium text-primary underline underline-offset-4 [--focus-ring-offset:2px]"
+          className="focus-ring font-medium text-fg underline underline-offset-4 [--focus-ring-offset:2px]"
           href={mailtoHref}
         >
           {site.email}

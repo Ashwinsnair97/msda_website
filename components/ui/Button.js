@@ -31,7 +31,6 @@ export default function Button({
   fullWidth = false,
   disabled = false,
   loading = false,
-  hoverColor,
   onClick,
   className = "",
   style,
@@ -52,10 +51,6 @@ export default function Button({
   }
 
   const unavailable = disabled || loading;
-  const buttonStyle =
-    hoverColor === undefined
-      ? style
-      : { ...style, "--button-hover-color": hoverColor };
   const classes = [
     "button",
     buttonVariantClasses[variant],
@@ -95,7 +90,7 @@ export default function Button({
         {...props}
         href={unavailable ? undefined : href}
         className={classes}
-        style={buttonStyle}
+        style={style}
         aria-label={ariaLabel}
         aria-disabled={unavailable || undefined}
         aria-busy={loading || undefined}
@@ -118,7 +113,7 @@ export default function Button({
       {...props}
       type={type}
       className={classes}
-      style={buttonStyle}
+      style={style}
       aria-label={ariaLabel}
       aria-busy={loading || undefined}
       disabled={unavailable}

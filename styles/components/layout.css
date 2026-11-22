@@ -1,0 +1,9 @@
+@layer components {
+  .site-container {
+    width: min(
+      calc(100% - 2 * var(--page-gutter)),
+      var(--content-width)
+    );
+    margin-inline: auto;
+  }
+}

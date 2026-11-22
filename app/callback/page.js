@@ -9,14 +9,14 @@ export const metadata = {
 
 export default function CallbackPage() {
   return (
-    <main className="bg-main-background py-16 sm:py-20">
+    <main className="bg-surface-page py-16 sm:py-20">
       <div className="site-container">
-        <div className="mx-auto max-w-3xl rounded border border-subtle-border bg-white p-6 sm:p-10">
+        <div className="mx-auto max-w-3xl rounded border border-line bg-surface p-6 sm:p-10">
           <Eyebrow>Get in touch</Eyebrow>
-          <h1 className="mt-3 font-heading text-[length:var(--text-page-heading)] leading-tight text-primary">
+          <h1 className="mt-3 font-heading text-page-heading leading-tight text-fg">
             Request a Callback
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-secondary-text">
+          <p className="mt-4 text-base leading-relaxed text-fg-muted">
             Tell us how we can help. Required fields are marked with an asterisk.
           </p>
           <div className="mt-8">

@@ -9,7 +9,7 @@ import useIsScrolled from "@/lib/useIsScrolled";
 
 // Solid rather than blurred glass: a fixed backdrop blur re-renders on every
 // scroll frame and was costing noticeable FPS.
-const navSurface = "bg-main-background";
+const navSurface = "bg-surface-page";
 
 function NavLink({ href, onClick, children }) {
   return (
@@ -49,7 +49,7 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full font-body text-primary">
+    <header className="fixed left-0 top-0 z-50 w-full font-body text-fg">
       <nav
         className={`w-full transition-all duration-500 ${
           isScrolled
@@ -94,7 +94,6 @@ export default function Navbar() {
               href={mailtoHref}
               variant="nav-cta"
               size="md"
-              hoverColor="var(--burnt-copper)"
               icon="→"
             >
               Contact Us
@@ -124,7 +123,6 @@ export default function Navbar() {
               href={mailtoHref}
               variant="nav-cta"
               size="sm"
-              hoverColor="var(--burnt-copper)"
               onClick={closeMenu}
               icon="→"
             >

@@ -1,0 +1,17 @@
+body {
+  background: var(--surface-page);
+  color: var(--fg);
+  font-family: var(--brand-font-body);
+  font-size: var(--font-size-body);
+  line-height: 1.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Scroll reveals (components/animations) start hidden in the server HTML.
+     Reduced-motion users see the content in place straight away;
+     !important outranks Motion's inline styles. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

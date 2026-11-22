@@ -62,7 +62,7 @@ export default function WhoWeServeRibbon() {
         aria-expanded={isOpen}
         aria-controls="who-we-serve-panel"
         style={{ width: TAB_WIDTH }}
-        className="focus-ring flex flex-none cursor-pointer flex-col items-center gap-3 rounded-l-[5px] bg-primary py-5 text-white shadow-[0_10px_24px_rgba(16,27,53,0.22)] transition-colors hover:bg-[var(--button-primary-hover)]"
+        className="focus-ring flex flex-none cursor-pointer flex-col items-center gap-3 rounded-l-card bg-action py-5 text-on-action shadow-card transition-colors hover:bg-action-hover"
       >
         <ChevronLeft
           size={16}
@@ -77,13 +77,13 @@ export default function WhoWeServeRibbon() {
       <div
         id="who-we-serve-panel"
         inert={!isOpen}
-        className="flex max-h-[calc(100dvh-8rem)] w-[min(22rem,calc(100vw-2.75rem))] flex-col rounded-tl-[5px] bg-white p-6 shadow-[0_18px_38px_rgba(16,27,53,0.2)]"
+        className="flex max-h-[calc(100dvh-8rem)] w-[min(22rem,calc(100vw-2.75rem))] flex-col rounded-tl-card bg-surface p-6 shadow-floating"
       >
         <Eyebrow className="mb-3">Who we serve</Eyebrow>
-        <p className="font-heading text-2xl leading-[1.15] text-primary">
+        <p className="font-heading text-2xl leading-[1.15] text-fg">
           Expertise for diverse business needs.
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-secondary-text">
+        <p className="mt-3 text-sm leading-relaxed text-fg-muted">
           Our multidisciplinary capabilities support organisations and
           individuals across a range of sectors and business needs.
         </p>
@@ -92,7 +92,7 @@ export default function WhoWeServeRibbon() {
           {clientSegments.map((segment) => (
             <li
               key={segment}
-              className="border-t border-subtle-border py-3 text-[15px] leading-relaxed text-primary"
+              className="border-t border-line py-3 text-[15px] leading-relaxed text-fg"
             >
               {segment}
             </li>

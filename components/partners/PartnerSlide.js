@@ -16,12 +16,12 @@ export default function PartnerSlide({
   return (
     <div
       style={introDelayStyle(isIntroPlaying, introDelayMs)}
-      className={`group relative aspect-[3/4] flex-none overflow-hidden rounded-[5px] bg-alternate-background text-left transition-[width,box-shadow,opacity,translate] ${EASE} ${INTRO_DELAY} ${
+      className={`group relative aspect-[3/4] flex-none overflow-hidden rounded-card bg-surface-alt text-left transition-[width,box-shadow,opacity,translate] ${EASE} ${INTRO_DELAY} ${
         hasEntered ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       } ${
         isActive
-          ? "w-[var(--card-active)] shadow-[0_18px_38px_rgba(16,27,53,0.2)]"
-          : "w-[var(--card)] shadow-[0_0_0_rgba(16,27,53,0)]"
+          ? "w-[var(--card-active)] shadow-floating"
+          : "w-[var(--card)] shadow-none"
       }`}
     >
       {/* Clicking an inactive portrait brings it forward; clicking the
@@ -43,10 +43,10 @@ export default function PartnerSlide({
 
       {/* Text stack is pinned to the bottom; the backdrop lives inside it,
           so the gradient only ever covers the text and grows with it. */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 px-3 pb-5 text-white sm:px-4">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 px-3 pb-5 tone-inverse sm:px-4">
         <div
           aria-hidden="true"
-          className={`absolute inset-x-0 -top-16 bottom-0 bg-gradient-to-t from-primary/95 via-primary/70 to-transparent transition-opacity ${EASE} ${
+          className={`absolute inset-x-0 -top-16 bottom-0 bg-gradient-to-t from-overlay/95 via-overlay/70 to-transparent transition-opacity ${EASE} ${
             isActive ? "opacity-100" : "opacity-0"
           }`}
         />
@@ -65,7 +65,7 @@ export default function PartnerSlide({
             </p>
           )}
           {partner.practice && (
-            <p className="mt-0.5 line-clamp-1 text-[10px] text-white/85 sm:text-xs">
+            <p className="mt-0.5 line-clamp-1 text-[10px] text-fg/85 sm:text-xs">
               {partner.practice}
             </p>
           )}
@@ -83,13 +83,13 @@ export default function PartnerSlide({
             }`}
           >
             <div className="min-h-0 overflow-hidden">
-              <p className="pt-2 line-clamp-3 text-[10px] leading-[1.4] text-white/90 sm:text-xs">
+              <p className="pt-2 line-clamp-3 text-[10px] leading-[1.4] text-fg/90 sm:text-xs">
                 {summary}
               </p>
               <button
                 type="button"
                 onClick={onOpenProfile}
-                className="focus-ring mb-1 mt-2 inline-flex cursor-pointer items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-white underline decoration-accent-soft underline-offset-4 [--focus-ring-color:var(--white)] [--focus-ring-offset:2px] sm:text-xs"
+                className="focus-ring mb-1 mt-2 inline-flex cursor-pointer items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-fg underline decoration-accent-soft underline-offset-4 [--focus-ring-color:var(--fg)] [--focus-ring-offset:2px] sm:text-xs"
               >
                 Know more
                 <ArrowUpRight size={13} aria-hidden="true" />

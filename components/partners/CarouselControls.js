@@ -9,7 +9,7 @@ function StepButton({ label, disabled, onClick, children }) {
       onClick={onClick}
       aria-label={label}
       disabled={disabled}
-      className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full text-primary transition-colors [--focus-ring-offset:2px] hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-primary"
+      className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full text-fg transition-colors [--focus-ring-offset:2px] hover:bg-action hover:text-on-action disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-fg"
     >
       {children}
     </button>
@@ -33,7 +33,7 @@ export default function CarouselControls({
       }`}
     >
       <div className="flex max-w-md flex-1 items-center gap-4">
-        <p className="w-7 text-sm font-semibold tabular-nums text-primary" aria-live="polite">
+        <p className="w-7 text-sm font-semibold tabular-nums text-fg" aria-live="polite">
           <span className="sr-only">Partner </span>
           {formatIndex(activeIndex)}
           <span className="sr-only"> of {partners.length}</span>
@@ -62,7 +62,7 @@ export default function CarouselControls({
               >
                 <span
                   className={`h-[3px] w-full rounded-full transition-colors duration-300 ${
-                    isActive ? "bg-accent" : "bg-primary/15 group-hover/seg:bg-primary/40"
+                    isActive ? "bg-accent" : "bg-fg/15 group-hover/seg:bg-fg/40"
                   }`}
                 />
               </button>
@@ -70,7 +70,7 @@ export default function CarouselControls({
           })}
         </div>
 
-        <p className="w-7 text-sm font-medium tabular-nums text-secondary-text/70" aria-hidden="true">
+        <p className="w-7 text-sm font-medium tabular-nums text-fg-muted/70" aria-hidden="true">
           {formatIndex(partners.length - 1)}
         </p>
       </div>

@@ -1,35 +1,33 @@
 import { Reveal } from "@/components/animations";
 import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { mailtoHref, site } from "@/data/site";
 
+// Text colours come from the section tone; only behaviour that differs
+// between a dark and a light band is listed here.
 const tones = {
-  dark: {
-    section: "bg-primary text-white [--focus-ring-color:var(--copper-glow)]",
-    label: "text-white",
-    email: "text-on-dark-muted hover:text-white",
+  inverse: {
+    emailHover: "hover:text-fg",
     primaryButton: "inverse",
     secondaryButton: "inverse-secondary",
   },
-  light: {
-    section: "bg-main-background text-primary",
-    label: "text-primary",
-    email: "text-secondary-text hover:text-accent",
+  page: {
+    emailHover: "hover:text-accent",
     primaryButton: "primary",
     secondaryButton: "secondary",
   },
 };
 
 // Closing call-to-action shared by every page; anchored at #contact.
-export default function ContactSection({ eyebrow, title, intro, tone = "dark" }) {
+export default function ContactSection({ eyebrow, title, intro, tone = "inverse" }) {
   const styles = tones[tone];
 
   return (
-    <section id="contact" className={`scroll-mt-24 py-12 sm:py-16 ${styles.section}`}>
+    <Section id="contact" tone={tone} className="scroll-mt-24 py-12 text-fg sm:py-16">
       <div className="site-container grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center">
         <Reveal>
           <SectionHeader
-            tone={tone}
             eyebrow={eyebrow}
             title={title}
             intro={intro}
@@ -40,10 +38,10 @@ export default function ContactSection({ eyebrow, title, intro, tone = "dark" })
 
         <Reveal delay={0.1} className="flex flex-col items-start gap-5 lg:items-end">
           <div className="lg:text-right">
-            <p className={`text-sm font-medium ${styles.label}`}>Write to us</p>
+            <p className="text-sm font-medium text-fg">Write to us</p>
             <a
               href={mailtoHref}
-              className={`focus-ring mt-1 inline-block text-base transition-colors ${styles.email}`}
+              className={`focus-ring mt-1 inline-block text-base text-fg-muted transition-colors ${styles.emailHover}`}
             >
               {site.email}
             </a>
@@ -67,6 +65,6 @@ export default function ContactSection({ eyebrow, title, intro, tone = "dark" })
           </div>
         </Reveal>
       </div>
-    </section>
+    </Section>
   );
 }

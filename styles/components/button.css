@@ -1,0 +1,177 @@
+/* Styles for components/ui/Button.js. Variants pick colours from the action
+   and surface roles in styles/tokens.css. */
+@layer components {
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: var(--card-radius);
+    color: var(--on-action);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .button:focus-visible {
+    outline: 3px solid var(--focus-ring-color);
+    outline-offset: 3px;
+  }
+
+  /* Primary: solid action fill. */
+  .button--primary,
+  .button--nav-cta {
+    background-color: var(--action);
+    color: var(--on-action);
+  }
+
+  .button--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--action-hover);
+  }
+
+  .button--primary:active:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--action-active);
+  }
+
+  /* Nav CTA: pill-shaped primary that warms to the accent on hover. */
+  .button--nav-cta {
+    border-radius: 9999px;
+  }
+
+  .button--nav-cta:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--nav-cta:active:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--accent);
+  }
+
+  /* Secondary: outline in the action colour. */
+  .button--secondary {
+    border-color: var(--action);
+    background-color: transparent;
+    color: var(--action);
+  }
+
+  .button--secondary:hover:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--action-subtle-hover);
+  }
+
+  .button--secondary:active:not(:disabled):not([aria-disabled="true"]) {
+    background-color: var(--surface-alt);
+  }
+
+  /* Inverse variants sit on dark (.tone-inverse) sections. */
+  .button--inverse {
+    border-color: var(--surface-page);
+    background-color: var(--surface-page);
+    color: var(--action);
+  }
+
+  .button--inverse:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--inverse:active:not(:disabled):not([aria-disabled="true"]) {
+    border-color: var(--surface-alt);
+    background-color: var(--surface-alt);
+  }
+
+  .button--inverse-secondary {
+    border-color: var(--surface-page);
+    background-color: transparent;
+    color: var(--fg-inverse);
+  }
+
+  .button--inverse-secondary:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--inverse-secondary:active:not(:disabled):not([aria-disabled="true"]) {
+    background-color: color-mix(in srgb, var(--surface-page) 12%, transparent);
+  }
+
+  /* Sizes */
+  .button--sm {
+    min-height: 40px;
+    padding-inline: 16px;
+    font-size: 0.875rem;
+  }
+
+  .button--md {
+    min-height: 52px;
+    padding-inline: 24px;
+  }
+
+  .button--lg {
+    min-height: 56px;
+    padding-inline: 28px;
+  }
+
+  .button--nav-cta.button--md {
+    min-height: 48px;
+  }
+
+  .button--icon-only {
+    padding-inline: 0;
+  }
+
+  .button--sm.button--icon-only {
+    width: 40px;
+  }
+
+  .button--md.button--icon-only {
+    width: 52px;
+  }
+
+  .button--lg.button--icon-only {
+    width: 56px;
+  }
+
+  .button--nav-cta.button--md.button--icon-only {
+    width: 48px;
+  }
+
+  .button--full-width {
+    width: 100%;
+  }
+
+  .button--unavailable,
+  .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .button__icon {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button__spinner {
+    width: 1em;
+    height: 1em;
+    flex: none;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: button-spin 700ms linear infinite;
+  }
+
+  @keyframes button-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .button {
+      transition: none;
+    }
+
+    .button__spinner {
+      animation: none;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+/*
+ * Design tokens. Three layers:
+ *
+ *   1. Palette — raw values with descriptive names. Only the roles below
+ *      may reference these.
+ *   2. Roles — what a value is for. All CSS and components use these.
+ *   3. @theme — exposes the roles as Tailwind classes (text-fg, bg-surface…).
+ *
+ * To restyle the site, change a palette value or point a role at a different
+ * palette colour. To add a colour: add it to the palette, give it a role,
+ * then map the role in @theme.
+ */
+
+:root {
+  /* ---------------------------------------------------------------------
+   * 1. Palette
+   * ------------------------------------------------------------------- */
+  --midnight-navy: #233b7c;
+  --deep-navy: #1b2a49;
+  --night-navy: #0a1225;
+  --shadow-navy: #101b35;
+  --burnt-copper: #a84b12;
+  --copper-glow: #e5a06e;
+  --copper-sand: #e8b089;
+  --copper-blush: #f4c5a2;
+  --warm-ivory: #f7f5f0;
+  --soft-linen: #eeeae2;
+  --stone-beige: #e7e2d9;
+  --slate-blue-grey: #526174;
+  --ink-slate: #2e3d4f;
+  --mist-blue: #d5dce8;
+  --subtle-border: #d7dce2;
+  --dark-section-border: #334056;
+  --white: #ffffff;
+
+  /* ---------------------------------------------------------------------
+   * 2. Roles
+   * ------------------------------------------------------------------- */
+
+  /* Surfaces */
+  --surface-page: var(--warm-ivory); /* page background */
+  --surface: var(--white); /* cards, panels, form fields */
+  --surface-alt: var(--stone-beige); /* placeholders behind photos */
+  --surface-inverse: var(--midnight-navy); /* dark bands; pair with .tone-inverse */
+  --overlay: var(--midnight-navy); /* scrims over photos and behind modals */
+
+  /* Text */
+  --fg: var(--midnight-navy); /* default text, headings, links */
+  --fg-copy: var(--ink-slate); /* long-form paragraphs */
+  --fg-muted: var(--slate-blue-grey); /* supporting text */
+
+  /* Accent */
+  --accent: var(--burnt-copper);
+  --accent-soft: var(--copper-sand);
+  --accent-pale: var(--copper-blush);
+
+  /* Borders and dividers */
+  --line: var(--subtle-border);
+
+  /* Actions: buttons and other solid interactive fills */
+  --action: var(--midnight-navy);
+  --action-hover: var(--deep-navy);
+  --action-active: var(--night-navy);
+  --action-subtle-hover: var(--soft-linen); /* outline-button hover */
+  --on-action: var(--white); /* text on an action fill */
+
+  /* Inverse: swapped in by .tone-inverse on dark bands and photo overlays */
+  --fg-inverse: var(--white);
+  --fg-inverse-muted: var(--mist-blue);
+  --accent-inverse: var(--copper-glow);
+  --line-inverse: var(--dark-section-border);
+
+  /* Focus */
+  --focus-ring-color: var(--accent);
+
+  /* Elevation */
+  --elevation-raised: 0 4px 14px color-mix(in srgb, var(--shadow-navy) 15%, transparent);
+  --elevation-card: 0 14px 30px color-mix(in srgb, var(--shadow-navy) 16%, transparent);
+  --elevation-floating: 0 18px 38px color-mix(in srgb, var(--shadow-navy) 20%, transparent);
+  --elevation-modal: 0 28px 80px color-mix(in srgb, var(--shadow-navy) 28%, transparent);
+
+  /* Shape */
+  --card-radius: 5px;
+
+  /* Typography. Font variables are injected on <html> by next/font in
+     app/layout.js. */
+  --brand-font-heading: var(--font-dm-serif-display), Georgia, serif;
+  --brand-font-body: var(--font-inter), Arial, sans-serif;
+
+  --font-size-hero: clamp(2.5rem, 4.2vw, 4rem);
+  --font-size-hero-body: clamp(1rem, calc(0.875rem + 0.5vw), 1.125rem);
+  --font-size-stat: clamp(1.625rem, 2vw, 2rem);
+  --font-size-stat-label: clamp(0.75rem, 0.875vw, 0.875rem);
+  --font-size-page-heading: clamp(2.5rem, 4.5vw, 3.5rem);
+  --font-size-section-heading: clamp(2.25rem, 3vw, 2.5rem);
+  --font-size-body: 1rem;
+  --font-size-label: clamp(0.75rem, 0.7rem + 0.15vw, 0.8125rem);
+
+  /* Layout */
+  --content-width: 90rem;
+  --page-gutter: 1.25rem;
+  --section-space: clamp(3rem, 7vw, 7rem);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-gutter: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-gutter: 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --page-gutter: clamp(3rem, 3.333vw, 4rem);
+  }
+}
+
+/* -----------------------------------------------------------------------
+ * 3. Tailwind classes
+ *
+ * `--color-*: initial` removes Tailwind's built-in palette, so classes such
+ * as bg-white or text-gray-500 produce no CSS. Only the roles below exist.
+ * (bg-transparent and text-current still work.)
+ * --------------------------------------------------------------------- */
+@theme inline {
+  --color-*: initial;
+
+  --color-surface-page: var(--surface-page);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-overlay: var(--overlay);
+
+  --color-fg: var(--fg);
+  --color-fg-copy: var(--fg-copy);
+  --color-fg-muted: var(--fg-muted);
+
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-pale: var(--accent-pale);
+
+  --color-line: var(--line);
+
+  --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
+  --color-on-action: var(--on-action);
+
+  --shadow-raised: var(--elevation-raised);
+  --shadow-card: var(--elevation-card);
+  --shadow-floating: var(--elevation-floating);
+  --shadow-modal: var(--elevation-modal);
+
+  --radius-card: var(--card-radius);
+
+  --font-heading: var(--brand-font-heading);
+  --font-body: var(--brand-font-body);
+
+  --text-hero: var(--font-size-hero);
+  --text-hero-body: var(--font-size-hero-body);
+  --text-stat: var(--font-size-stat);
+  --text-stat-label: var(--font-size-stat-label);
+  --text-page-heading: var(--font-size-page-heading);
+  --text-section-heading: var(--font-size-section-heading);
+  --text-body: var(--font-size-body);
+  --text-label: var(--font-size-label);
+}

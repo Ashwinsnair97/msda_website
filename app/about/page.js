@@ -4,6 +4,7 @@ import ApproachSection from "@/components/sections/ApproachSection";
 import AnimatedPartnerCarousel from "@/components/partners/AnimatedPartnerCarousel";
 import PartnerCard from "@/components/partners/PartnerCard";
 import PageHero from "@/components/ui/PageHero";
+import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { overviewPoints } from "@/data/about";
 import { partners } from "@/data/partners";
@@ -20,18 +21,18 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-white font-body text-primary-text">
+    <main className="bg-surface font-body text-fg">
       <PageHero
         eyebrow="About the firm"
         title="Built on experience. Guided by professional expertise."
         intro={`${site.name} brings together experienced chartered accountants and specialists across taxation, audit, corporate law and advisory. Our multidisciplinary capabilities support businesses and individuals in navigating complex financial and regulatory requirements.`}
       >
-        <p className="mt-5 text-[17px] font-medium leading-[1.6] text-primary">
+        <p className="mt-5 text-[17px] font-medium leading-[1.6] text-fg">
           Practical guidance. Bespoke solutions. Professional perspective.
         </p>
       </PageHero>
 
-      {/* <section className="bg-white pb-16 pt-20 lg:pb-[72px] lg:pt-[88px]">
+      {/* <Section tone="surface" className="pb-16 pt-20 lg:pb-[72px] lg:pt-[88px]">
         <div className="site-container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-14">
           <SectionHeader
             title="A multidisciplinary approach to professional services."
@@ -41,25 +42,25 @@ export default function AboutPage() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             {overviewPoints.map((point, index) => (
-              <div key={point.title} className="border-t border-subtle-border pt-5 sm:pt-6">
+              <div key={point.title} className="border-t border-line pt-5 sm:pt-6">
                 <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent">
                   {formatIndex(index)}
                 </span>
-                <h3 className="mt-3 text-[19px] font-semibold leading-[1.35] text-primary">
+                <h3 className="mt-3 text-[19px] font-semibold leading-[1.35] text-fg">
                   {point.title}
                 </h3>
-                <p className="mt-3 text-[15px] leading-[1.7] text-secondary-text">
+                <p className="mt-3 text-[15px] leading-[1.7] text-fg-muted">
                   {point.text}
                 </p>
               </div>
             ))}
           </div>
         </div>
-      </section> */}
+      </Section> */}
 
       {/* <ApproachSection /> */}
 
-      <section id="our-people" className="bg-white pb-16 pt-20 lg:pb-[80px] lg:pt-[104px]">
+      <Section id="our-people" tone="surface" className="pb-16 pt-20 lg:pb-[80px] lg:pt-[104px]">
         <div className="site-container">
           <Reveal>
             <SectionHeader
@@ -92,7 +93,7 @@ export default function AboutPage() {
             )}
           </div>
         </div>
-      </section>
+      </Section>
 
       <ContactSection
         eyebrow="Let's talk"

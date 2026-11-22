@@ -45,21 +45,21 @@ export default function PartnerProfileModal({ partner, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex overflow-y-auto overscroll-contain bg-primary/70 p-4 backdrop-blur-[2px] transition-opacity duration-300 ease-out motion-reduce:transition-none starting:opacity-0 sm:p-8"
+      className="fixed inset-0 z-50 flex overflow-y-auto overscroll-contain bg-overlay/70 p-4 backdrop-blur-[2px] transition-opacity duration-300 ease-out motion-reduce:transition-none starting:opacity-0 sm:p-8"
       onClick={onClose}
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="partner-modal-title"
-        className="relative m-auto flex max-h-[calc(100dvh-2rem)] w-full max-w-md flex-col overflow-hidden rounded-lg bg-main-background shadow-[0_28px_80px_rgba(16,27,53,0.28)] transition-[opacity,translate,scale] duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none starting:translate-y-4 starting:scale-[0.98] starting:opacity-0 md:grid md:max-h-none md:max-w-[68rem] md:grid-cols-[22rem_minmax(0,1fr)]"
+        className="relative m-auto flex max-h-[calc(100dvh-2rem)] w-full max-w-md flex-col overflow-hidden rounded-lg bg-surface-page shadow-modal transition-[opacity,translate,scale] duration-[450ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none starting:translate-y-4 starting:scale-[0.98] starting:opacity-0 md:grid md:max-h-none md:max-w-[68rem] md:grid-cols-[22rem_minmax(0,1fr)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
           ref={closeButtonRef}
           type="button"
           onClick={onClose}
-          className="focus-ring absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-primary shadow-[0_4px_14px_rgba(16,27,53,0.15)] transition-colors [--focus-ring-offset:2px] hover:bg-primary hover:text-white"
+          className="focus-ring absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-surface/95 text-fg shadow-raised transition-colors [--focus-ring-offset:2px] hover:bg-action hover:text-on-action"
           aria-label="Close profile"
         >
           <X size={18} />
@@ -71,7 +71,7 @@ export default function PartnerProfileModal({ partner, onClose }) {
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain md:contents">
           {/* Portrait keeps a 3:4 minimum on desktop (matching the carousel cards) so
               profiles open at a consistent size; it stretches only if the text is taller. */}
-          <div className="relative h-64 bg-alternate-background sm:h-80 md:h-auto md:min-h-[29.33rem]">
+          <div className="relative h-64 bg-surface-alt sm:h-80 md:h-auto md:min-h-[29.33rem]">
             <PartnerPortrait
               src={partner.image}
               name={partner.name}
@@ -80,7 +80,7 @@ export default function PartnerProfileModal({ partner, onClose }) {
             />
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-primary/45 to-transparent"
+              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-overlay/45 to-transparent"
             />
           </div>
 
@@ -89,7 +89,7 @@ export default function PartnerProfileModal({ partner, onClose }) {
 
             <h2
               id="partner-modal-title"
-              className="mt-3 pr-12 font-heading text-[clamp(1.75rem,3.5vw,2.25rem)] leading-[1.05] tracking-tight text-primary"
+              className="mt-3 pr-12 font-heading text-[clamp(1.75rem,3.5vw,2.25rem)] leading-[1.05] tracking-tight text-fg"
             >
               {partner.name}
             </h2>
@@ -102,14 +102,14 @@ export default function PartnerProfileModal({ partner, onClose }) {
                   </p>
                 )}
                 {partner.practice && (
-                  <p className="text-sm text-secondary-text">{partner.practice}</p>
+                  <p className="text-sm text-fg-muted">{partner.practice}</p>
                 )}
               </div>
             )}
 
             <div className="mt-6 h-px w-12 bg-accent-soft" aria-hidden="true" />
 
-            <div className="mt-6 space-y-4 text-[0.95rem] leading-[1.75] text-body-text">
+            <div className="mt-6 space-y-4 text-[0.95rem] leading-[1.75] text-fg-copy">
               {biography.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
