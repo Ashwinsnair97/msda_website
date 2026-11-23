@@ -21,7 +21,7 @@ export const partners = [
     designation: "Partner",
     practice: "Corporate Law",
     bio: [
-      "CA Shubha Shankar has been a Partner since 2011 and brings a wealth of professional experience spanning corporate advisory, governance, and regulatory compliance. With prior experience at leading organisations such as Deloitte and Wipro, she combines strong technical expertise with a practical understanding of corporate operations and business requirements. Her professional qualifications include Fellow Chartered Accountant (FCA), Company Secretary (CS), and Certified Information Systems Auditor (CISA), reflecting her multidisciplinary expertise across finance, corporate law, and information systems.",
+      "CA Shubha Shankar brings a wealth of professional experience spanning corporate advisory, governance, and regulatory compliance. With prior experience at leading organisations such as Deloitte and Wipro, she combines strong technical expertise with a practical understanding of corporate operations and business requirements. Her professional qualifications include Fellow Chartered Accountant (FCA), Company Secretary (CS), and Certified Information Systems Auditor (CISA), reflecting her multidisciplinary expertise across finance, corporate law, and information systems.",
       "Shubha leads the Corporate Law advisory practice, assisting businesses in navigating complex legal and regulatory frameworks with confidence and clarity. Her areas of focus include corporate law advisory, statutory and regulatory compliance, corporate governance, and legal and procedural requirements applicable to businesses. She works closely with corporates to provide practical, structured, and compliance-oriented guidance, helping them manage regulatory obligations, strengthen governance practices, and make informed business decisions. Her experience and holistic approach enable her to deliver solutions aligned with both legal requirements and organisational objectives.",
     ],
   },
@@ -100,7 +100,7 @@ export const partners = [
     designation: "BCom, ACA",
     practice: "",
     bio: [
-      "CA Rakesh Kumar H is A Chartered Accountant specialising in Direct Taxation, with particular focus on income-tax litigation and advisory. His experience includes handling assessments, reassessments, penalty and rectification proceedings, and appeals before the Commissioner of Income Tax (Appeals) and the Income Tax Appellate Tribunal.",
+      "CA Rakesh Kumar H is a Chartered Accountant specialising in Direct Taxation, with particular focus on income-tax litigation and advisory. His experience includes handling assessments, reassessments, penalty and rectification proceedings, and appeals before the Commissioner of Income Tax (Appeals) and the Income Tax Appellate Tribunal.",
       "He is actively involved in drafting responses to statutory notices, written submissions, grounds of appeal, stay petitions and tax opinions, supported by detailed analysis of statutory provisions and judicial precedents. He also advises on domestic and international taxation, withholding tax and related compliance matters, assisting clients in addressing complex tax issues and resolving disputes with tax authorities.",
     ],
   },
@@ -126,7 +126,7 @@ export const partners = [
     designation: "M Com (Taxation), B Com (Hons), ACS",
     practice: "",
     bio: [
-      "CS Kiran Gupta is A Qualified Company Secretary with professional expertise in Corporate Laws, Company Incorporation, Corporate Restructuring, Regulatory Compliance, Corporate Governance and RBI-related compliances for companies. She has extensive experience handling end-to-end MCA filings, corporate advisory, and business restructuring, including converting entities into LLPs and LLPs into Private Limited Companies.",
+      "CS Kiran Gupta is a Qualified Company Secretary with professional expertise in Corporate Laws, Company Incorporation, Corporate Restructuring, Regulatory Compliance, Corporate Governance and RBI-related compliances for companies. She has extensive experience handling end-to-end MCA filings, corporate advisory, and business restructuring, including converting entities into LLPs and LLPs into Private Limited Companies.",
       "Her expertise encompasses incorporation and post-incorporation compliances, Board and General Meeting procedures, and the preparation & maintenance of statutory registers and secretarial records. She delivers efficient, reliable corporate secretarial solutions that ensure regulatory compliance, procedural excellence, and sound corporate governance",
     ],
   },
@@ -139,7 +139,7 @@ export const partners = [
     designation: "Consulting - Human Resource",
     practice: "",
     bio: [
-      "Shilpa O E is A dynamic and result-oriented HR professional with expertise in managing end-to-end HR operations and strategic people management. Skilled in talent acquisition, workforce planning, employee lifecycle management, and organizational development.",
+      "Shilpa O E is a dynamic and result-oriented HR professional with expertise in managing end-to-end HR operations and strategic people management. Skilled in talent acquisition, workforce planning, employee lifecycle management, and organizational development.",
       "Experienced in implementing HR policies, performance management systems, KPI frameworks, employee engagement initiatives, and appraisal processes. Proficient in compensation and benefits coordination, payroll administration, and statutory compliance. Adept at handling employee relations, grievance resolution, learning and development, and HR process improvements.",
     ],
   },

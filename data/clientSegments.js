@@ -7,4 +7,5 @@ export const clientSegments = [
   "Banks & insurance companies",
   "Startups",
   "Government & public organisations",
+  "Partnership & LLPs"
 ];
