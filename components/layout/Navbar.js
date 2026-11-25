@@ -2,24 +2,36 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import Button from "@/components/ui/Button";
-import { mailtoHref, site } from "@/data/site";
+import { site } from "@/data/site";
+import ContactTrigger from "./ContactTrigger";
 import useIsScrolled from "@/lib/useIsScrolled";
 
 // Solid rather than blurred glass: a fixed backdrop blur re-renders on every
 // scroll frame and was costing noticeable FPS.
 const navSurface = "bg-surface-page";
 
-function NavLink({ href, onClick, children }) {
+function isActivePath(pathname, href) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+// The current page's link keeps its underline, drawn in the accent colour.
+function NavLink({ href, onClick, isActive, children }) {
   return (
     <Link
       href={href}
       onClick={onClick}
+      aria-current={isActive ? "page" : undefined}
       className="group flex flex-col gap-0.5 whitespace-nowrap transition-colors hover:text-accent"
     >
       {children}
-      <span className="block h-0.5 w-0 bg-current transition-all duration-300 group-hover:w-full" />
+      <span
+        className={`block h-0.5 transition-all duration-300 ${
+          isActive ? "w-full bg-accent" : "w-0 bg-current group-hover:w-full"
+        }`}
+      />
     </Link>
   );
 }
@@ -45,6 +57,7 @@ function MenuToggle({ isOpen, onToggle }) {
 
 export default function Navbar() {
   const isScrolled = useIsScrolled();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -84,20 +97,15 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-4 md:flex lg:gap-8">
+          <div className="hidden items-center gap-4 font-semibold md:flex lg:gap-8">
             {site.navigation.map((link) => (
-              <NavLink key={link.href} href={link.href}>
+              <NavLink key={link.href} href={link.href} isActive={isActivePath(pathname, link.href)}>
                 {link.label}
               </NavLink>
             ))}
-            <Button
-              href={mailtoHref}
-              variant="nav-cta"
-              size="md"
-              icon="→"
-            >
-              Contact Us
-            </Button>
+            <ContactTrigger variant="nav-cta" size="md" icon="→" align="end">
+              Contact us
+            </ContactTrigger>
           </div>
 
           <MenuToggle isOpen={isMenuOpen} onToggle={() => setIsMenuOpen(!isMenuOpen)} />
@@ -115,19 +123,18 @@ export default function Navbar() {
         <div className="overflow-x-auto">
           <div className="flex w-max min-w-full items-center justify-center gap-5 px-4 py-2">
             {site.navigation.map((link) => (
-              <NavLink key={link.href} href={link.href} onClick={closeMenu}>
+              <NavLink
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                isActive={isActivePath(pathname, link.href)}
+              >
                 {link.label}
               </NavLink>
             ))}
-            <Button
-              href={mailtoHref}
-              variant="nav-cta"
-              size="sm"
-              onClick={closeMenu}
-              icon="→"
-            >
-              Contact Us
-            </Button>
+            <ContactTrigger variant="nav-cta" size="sm" icon="→">
+              Contact us
+            </ContactTrigger>
           </div>
         </div>
       </div>

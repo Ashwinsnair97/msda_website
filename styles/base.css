@@ -6,6 +6,12 @@ body {
   line-height: 1.65;
 }
 
+/* Spread heading lines evenly so no word is left alone on the last line. */
+h1,
+h2 {
+  text-wrap: balance;
+}
+
 @media (prefers-reduced-motion: reduce) {
   /* Scroll reveals (components/animations) start hidden in the server HTML.
      Reduced-motion users see the content in place straight away;

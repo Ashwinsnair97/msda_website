@@ -1,13 +1,14 @@
 // Typography shared by every section intro. Colours come from the roles, so
 // inside a dark band (<Section tone="inverse">) they switch automatically.
 
-export function Eyebrow({ className = "", children }) {
+// `as` lets an eyebrow serve as a section's only heading (e.g. as="h2").
+export function Eyebrow({ as: Tag = "p", className = "", children }) {
   return (
-    <p
+    <Tag
       className={`text-label font-semibold uppercase tracking-[0.2em] text-accent ${className}`}
     >
       {children}
-    </p>
+    </Tag>
   );
 }
 

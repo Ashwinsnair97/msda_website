@@ -2,6 +2,7 @@ import Link from "next/link";
 import heroImage from "@/public/msdaco_hero_page.jpg";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/animations";
 import ContactSection from "@/components/contact/ContactSection";
+import ContactTrigger from "@/components/layout/ContactTrigger";
 import PartnerCard from "@/components/partners/PartnerCard";
 import WhoWeServeRibbon from "@/components/sections/WhoWeServeRibbon";
 import Button from "@/components/ui/Button";
@@ -10,7 +11,7 @@ import SectionHeader, { Eyebrow } from "@/components/ui/SectionHeader";
 import { firmHighlights } from "@/data/home";
 import { partners } from "@/data/partners";
 import { serviceHref, services } from "@/data/services";
-import { mailtoHref, site } from "@/data/site";
+import { site } from "@/data/site";
 import { formatIndex } from "@/lib/format";
 
 const textLinkClasses =
@@ -40,11 +41,11 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button href="/services" icon="→">
-                Explore Our Services
+                Explore our services
               </Button>
-              <Button href={mailtoHref} variant="secondary" icon="→">
-                Get in Touch
-              </Button>
+              <ContactTrigger variant="secondary" icon="→">
+                Get in touch
+              </ContactTrigger>
             </div>
           </div>
         </div>
@@ -137,7 +138,7 @@ export default function Home() {
             ))}
           </StaggerContainer>
           <Link href="/about#our-people" className={`${textLinkClasses} mt-8 inline-flex items-center gap-3`}>
-            Meet Our Team <span aria-hidden="true">→</span>
+            Meet our team <span aria-hidden="true">→</span>
           </Link>
         </div>
       </Section>

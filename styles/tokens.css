@@ -32,6 +32,7 @@
   --mist-blue: #d5dce8;
   --subtle-border: #d7dce2;
   --dark-section-border: #334056;
+  --navy-rule: #5a6da0; /* divider that reads on midnight navy */
   --white: #ffffff;
 
   /* ---------------------------------------------------------------------
@@ -69,7 +70,7 @@
   --fg-inverse: var(--white);
   --fg-inverse-muted: var(--mist-blue);
   --accent-inverse: var(--copper-glow);
-  --line-inverse: var(--dark-section-border);
+  --line-inverse: var(--navy-rule);
 
   /* Focus */
   --focus-ring-color: var(--accent);

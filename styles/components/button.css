@@ -34,7 +34,10 @@
     color: var(--on-action);
   }
 
-  .button--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  /* Every variant keeps its hover look while the popover it controls is
+     open (aria-expanded, set by ContactTrigger). */
+  .button--primary:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--primary[aria-expanded="true"] {
     background-color: var(--action-hover);
   }
 
@@ -47,9 +50,17 @@
     border-radius: 9999px;
   }
 
-  .button--nav-cta:hover:not(:disabled):not([aria-disabled="true"]),
-  .button--nav-cta:active:not(:disabled):not([aria-disabled="true"]) {
+  .button--nav-cta:active:not(:disabled):not([aria-disabled="true"]),
+  .button--nav-cta[aria-expanded="true"] {
     background-color: var(--accent);
+  }
+
+  /* Touch screens keep :hover after a tap, which would leave the button
+     orange after the popover closes, so hover only applies with a pointer. */
+  @media (hover: hover) {
+    .button--nav-cta:hover:not(:disabled):not([aria-disabled="true"]) {
+      background-color: var(--accent);
+    }
   }
 
   /* Secondary: outline in the action colour. */
@@ -59,7 +70,8 @@
     color: var(--action);
   }
 
-  .button--secondary:hover:not(:disabled):not([aria-disabled="true"]) {
+  .button--secondary:hover:not(:disabled):not([aria-disabled="true"]),
+  .button--secondary[aria-expanded="true"] {
     background-color: var(--action-subtle-hover);
   }
 
@@ -75,7 +87,8 @@
   }
 
   .button--inverse:hover:not(:disabled):not([aria-disabled="true"]),
-  .button--inverse:active:not(:disabled):not([aria-disabled="true"]) {
+  .button--inverse:active:not(:disabled):not([aria-disabled="true"]),
+  .button--inverse[aria-expanded="true"] {
     border-color: var(--surface-alt);
     background-color: var(--surface-alt);
   }
