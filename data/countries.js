@@ -10,8 +10,8 @@
 // While this list is empty the ribbon is not rendered.
 export const countries = [
   { name: "Spain", flag: "/flags/es.svg" },
-  { name: "UK", flag: "/flags/gb.svg" },
-  { name: "US", flag: "/flags/us.svg" },
+  { name: "United Kingdom", flag: "/flags/gb.svg" },
+  { name: "United States", flag: "/flags/us.svg" },
   { name: "France", flag: "/flags/fr.svg" },
   { name: "Austria", flag: "/flags/at.svg" },
   { name: "Netherlands", flag: "/flags/nl.svg" },
