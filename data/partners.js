@@ -92,7 +92,7 @@ export const partners = [
     imagePosition: "50% 16%",
     qualification: "B.Com., FCA, DISA",
     designation: "Partner",
-    practice: "",
+    practice: "Hyderabad Branch",
     bio: [
       "CA Prashanth Reddy Yalala is a Fellow Chartered Accountant (FCA) with a Diploma in Information System Audit (DISA) and extensive experience in taxation, accounting, and audit services. His areas of expertise include Goods and Services Tax (GST), Income Tax, statutory audits, and internal audits. With a strong understanding of financial reporting, regulatory frameworks, and business requirements, he provides practical and comprehensive professional services to clients across diverse industries, helping them strengthen compliance, manage tax obligations, and maintain robust financial processes.",
       "As the Partner heading the firm's Hyderabad branch, Prashanth is responsible for overseeing branch operations, managing client relationships, and driving the delivery of quality professional services. He works closely with businesses on tax planning, compliance management, audit engagements, and strategic advisory, offering solutions tailored to their operational and regulatory needs. Through his leadership, professional expertise, and client-focused approach, he plays an important role in strengthening the firm's presence in Hyderabad and building long-term relationships founded on trust, responsiveness, and professional excellence.",
@@ -134,7 +134,7 @@ export const partners = [
     imagePosition: "50% 16%",
     qualification: "B.Com (Hons), ACS, M.Com (Taxation)",
     designation: "Manager",
-    practice: "",
+    practice: "Company Secretary",
     bio: [
       "CS Kiran Gupta is a Qualified Company Secretary with professional expertise in Corporate Laws, Company Incorporation, Corporate Restructuring, Regulatory Compliance, Corporate Governance and RBI-related compliances for companies. She has extensive experience handling end-to-end MCA filings, corporate advisory, and business restructuring, including converting entities into LLPs and LLPs into Private Limited Companies.",
       "Her expertise encompasses incorporation and post-incorporation compliances, Board and General Meeting procedures, and the preparation & maintenance of statutory registers and secretarial records. She delivers efficient, reliable corporate secretarial solutions that ensure regulatory compliance, procedural excellence, and sound corporate governance",
