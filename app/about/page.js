@@ -25,11 +25,11 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About the firm"
         title="Built on experience. Guided by professional expertise."
-        intro={`${site.name} brings together experienced chartered accountants and specialists across taxation, audit, corporate law and advisory. Our multidisciplinary capabilities support businesses and individuals in navigating complex financial and regulatory requirements.`}
+        intro={`Founded as Mukunda & Co in Bengaluru in 2005, the firm has evolved into MSDA & Co, a multidisciplinary professional services firm offering secretarial services, accounting, compliance, cross-border advisory, assurance and consulting to businesses across sectors.`}
       >
-        <p className="mt-5 text-[17px] font-medium leading-[1.6] text-fg">
+        {/* <p className="mt-5 text-[17px] font-medium leading-[1.6] text-fg">
           Practical guidance. Bespoke solutions. Professional perspective.
-        </p>
+        </p> */}
       </PageHero>
 
       {/* <Section tone="surface" className="pb-16 pt-20 lg:pb-[72px] lg:pt-[88px]">
@@ -82,6 +82,7 @@ export default function AboutPage() {
                     key={partner.id}
                     variant="detailed"
                     name={partner.name}
+                    qualification={partner.qualification}
                     designation={partner.designation}
                     practice={partner.practice}
                     image={partner.image}

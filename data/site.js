@@ -14,7 +14,7 @@ export const site = {
   navBrand: "MSDA & Co",
   descriptor: "Chartered Accountants",
   email: "contact@msda.co",
-  phone: "+91 98805 29529",
+  phone: "+91 91806 13396",
   copyrightYear: 2026,
   positioningStatement: "Professional expertise. Practical solutions.",
   positioningDescription:
@@ -41,27 +41,27 @@ export const telHref = `tel:${site.phone.replace(/\s/g, "")}`;
 // Each entry in `addressLines` is one line of the printed address.
 export const offices = [
   office({
-    id: "bengaluru-jayanagar",
-    name: "Bengaluru – Jayanagar",
+    id: "bengaluru-basavagudi",
+    name: "Bengaluru – Basavagudi",
     addressLines: [
-      "No. 267, 6th Cross Road, 1st Block, Jayanagar,",
-      "Bengaluru – 560011",
+      "Indiqube South Mile, Vijayarangam Layout, Basavagudi,",
+      "Bengaluru, Karnataka – 560004",
     ],
   }),
   office({
     id: "bengaluru-basaveshwar-nagar",
     name: "Bengaluru – Basaveshwar Nagar",
     addressLines: [
-      "No. 19, Ground Floor, 1st ‘C’ Cross, SN Layout,",
-      "3rd Stage, 4th Block, Basaveshwar Nagar, Bengaluru – 560079",
+      "No. 19, Ground Floor, 1st ‘C’ Cross, SN Layout, 3rd Stage, 4th Block,",
+      "Basaveshwar Nagar, Bengaluru, Karnataka – 560079",
     ],
   }),
   office({
     id: "raipur",
     name: "Raipur",
     addressLines: [
-      "#M-26, Veena Chambers, High Street Rama World,",
-      "Behind MGM Eye Hospital, Vidhana Sabha Road, Raipur – 492001",
+      "#M-26, Veena Chambers, High Street Rama World, Behind MGM Eye Hospital,",
+      "Vidhana Sabha Road, Raipur, Chhattisgarh – 492001",
     ],
   }),
   office({

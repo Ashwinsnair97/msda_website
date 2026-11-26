@@ -9,7 +9,7 @@ import {
   TextField,
 } from "@/components/forms/fields";
 import { services } from "@/data/services";
-import { site } from "@/data/site";
+import { mailtoHref, site } from "@/data/site";
 
 const assistanceAreas = [...services.map((service) => service.shortTitle), "Other"];
 
@@ -21,7 +21,14 @@ export default function CallbackForm() {
       status={
         <>
           This form is a preview and does not submit information. To contact the firm,
-          email <span className="font-medium text-fg">{site.email}</span>.
+          email{" "}
+          <a
+            href={mailtoHref}
+            className="focus-ring font-medium text-fg underline decoration-accent underline-offset-4 transition-colors hover:text-accent"
+          >
+            {site.email}
+          </a>
+          .
         </>
       }
     >

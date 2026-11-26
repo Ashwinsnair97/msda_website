@@ -8,7 +8,7 @@ import { offices, site, telHref } from "@/data/site";
 
 // White version of the MSDA & Co. | CA India lockup for the navy footer.
 // Dimensions match public/msda_logo.png; update them if the white file differs.
-const footerLogo = { src: "/msda_logo_white.png", width: 2047, height: 450 };
+const footerLogo = { src: "/msda_logo_jpeg.jpeg", width: 2047, height: 450 };
 
 const contactLinkClasses =
   "focus-ring inline-flex items-center gap-3 text-base text-fg transition-colors duration-200 hover:text-accent";

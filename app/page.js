@@ -3,6 +3,7 @@ import heroImage from "@/public/msdaco_hero_page.jpg";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/animations";
 import ContactSection from "@/components/contact/ContactSection";
 import ContactTrigger from "@/components/layout/ContactTrigger";
+import CountriesWeServe from "@/components/sections/CountriesWeServe";
 import PartnerCard from "@/components/partners/PartnerCard";
 import WhoWeServeRibbon from "@/components/sections/WhoWeServeRibbon";
 import Button from "@/components/ui/Button";
@@ -129,6 +130,7 @@ export default function Home() {
                 <PartnerCard
                   variant="preview"
                   name={partner.name}
+                  qualification={partner.qualification}
                   designation={partner.designation}
                   practice={partner.practice}
                   image={partner.image}
@@ -142,6 +144,8 @@ export default function Home() {
           </Link>
         </div>
       </Section>
+
+      <CountriesWeServe />
 
       <WhoWeServeRibbon />
 

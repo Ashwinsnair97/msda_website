@@ -2,10 +2,11 @@
 // inside a dark band (<Section tone="inverse">) they switch automatically.
 
 // `as` lets an eyebrow serve as a section's only heading (e.g. as="h2").
-export function Eyebrow({ as: Tag = "p", className = "", children }) {
+export function Eyebrow({ as: Tag = "p", className = "", children, ...props }) {
   return (
     <Tag
       className={`text-label font-semibold uppercase tracking-[0.2em] text-accent ${className}`}
+      {...props}
     >
       {children}
     </Tag>

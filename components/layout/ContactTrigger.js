@@ -8,7 +8,7 @@ import ContactPopover from "./ContactPopover";
 const GAP = 12;
 const VIEWPORT_MARGIN = 16;
 
-// A button that toggles the contact-email popover beside itself. With a
+// A button that toggles the contact popover (email and phone) beside itself. With a
 // `variant` it renders the shared <Button>; without one, a plain <button>
 // styled by `className` (e.g. a footer text link).
 //

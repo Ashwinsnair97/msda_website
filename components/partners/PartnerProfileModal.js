@@ -94,8 +94,11 @@ export default function PartnerProfileModal({ partner, onClose }) {
               {partner.name}
             </h2>
 
-            {(partner.designation || partner.practice) && (
+            {(partner.qualification || partner.designation || partner.practice) && (
               <div className="mt-3 space-y-1">
+                {partner.qualification && (
+                  <p className="text-sm text-fg-copy">{partner.qualification}</p>
+                )}
                 {partner.designation && (
                   <p className="text-xs font-semibold uppercase tracking-[0.08em] text-accent">
                     {partner.designation}

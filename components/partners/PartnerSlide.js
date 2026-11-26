@@ -59,6 +59,11 @@ export default function PartnerSlide({
           <p className="line-clamp-2 font-heading text-[clamp(1rem,2.2vw,1.5rem)] leading-[1.05]">
             {isActive ? partner.name : (partner.short_name ?? partner.name)}
           </p>
+          {partner.qualification && (
+            <p className="mt-1 line-clamp-1 text-[10px] text-fg/85 sm:text-xs">
+              {partner.qualification}
+            </p>
+          )}
           {partner.designation && (
             <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-accent-pale sm:text-xs">
               {partner.designation}

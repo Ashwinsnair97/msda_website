@@ -3,6 +3,7 @@ import PartnerPortrait from "./PartnerPortrait";
 
 export default function PartnerCard({
   name,
+  qualification,
   designation,
   practice,
   image,
@@ -45,7 +46,8 @@ export default function PartnerCard({
           name
         )}
       </h3>
-      <div className="min-h-12 text-sm leading-[1.5] text-fg-muted">
+      <div className="text-sm leading-[1.5] text-fg-muted">
+        {qualification && <p className="text-fg-copy">{qualification}</p>}
         <p>{designation}</p>
         {practice && <p>{practice}</p>}
       </div>

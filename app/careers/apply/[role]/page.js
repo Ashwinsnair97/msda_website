@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import ApplicationPage from "@/components/careers/ApplicationPage";
 import { findOpening, openings } from "@/data/careers";
 import { site } from "@/data/site";
@@ -16,7 +17,20 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function RoleApplicationPage({ params }) {
+// The role comes from the URL, so it is read inside <Suspense>: the shared
+// App Shell (the general application page, same layout with no role
+// preselected) shows the instant you click Apply, and the role-specific
+// version replaces it as soon as it resolves. Every listed role is
+// prerendered, so on a full page load the role version arrives in the HTML.
+export default function RoleApplicationPage({ params }) {
+  return (
+    <Suspense fallback={<ApplicationPage />}>
+      <RoleApplication params={params} />
+    </Suspense>
+  );
+}
+
+async function RoleApplication({ params }) {
   const opening = findOpening((await params).role);
   if (!opening) {
     notFound();

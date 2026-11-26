@@ -1,0 +1,124 @@
+/*
+ * "Countries We Serve" ribbon (components/sections/CountriesWeServe.js).
+ *
+ * Two modes (screen width only moves the label from above the row to beside
+ * it):
+ *   Marquee: the row drifts slowly right to left on every device and never
+ *     pauses.
+ *   Static: used only with prefers-reduced-motion. One row you swipe, or
+ *     scroll with arrow keys after focusing it.
+ *
+ * The track holds the list twice. Each copy ends with one gap of padding, so
+ * moving the track by exactly -50% lines the second copy up where the first
+ * started and the loop has no visible jump.
+ */
+@layer components {
+  .countries-marquee {
+    --marquee-gap: 0.75rem;
+    --marquee-fade: var(--page-gutter);
+
+    position: relative;
+    min-width: 0;
+    /* Phones: run the row to the screen edges so it reads as swipeable. */
+    margin-inline: calc(-1 * var(--page-gutter));
+  }
+
+  /* Edge fades in the band colour, so pills enter and leave softly. They
+     sit on this wrapper, not the scroller, so they stay put while it
+     scrolls. */
+  .countries-marquee::before,
+  .countries-marquee::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    z-index: 1;
+    width: var(--marquee-fade);
+    pointer-events: none;
+  }
+
+  .countries-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--surface-page), transparent);
+    /* Static mode starts at the first country, so no fade on the left. */
+    opacity: 0;
+  }
+
+  .countries-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--surface-page), transparent);
+  }
+
+  .countries-marquee__viewport {
+    --focus-ring-offset: 0px;
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    border-radius: var(--card-radius);
+    /* Hide the scrollbar; touch, trackpad and keyboard scrolling still work. */
+    scrollbar-width: none;
+  }
+
+  .countries-marquee__viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .countries-marquee__track {
+    display: flex;
+    width: max-content;
+    /* Room for the focus ring, and end padding so the last pill can scroll
+       clear of the right fade. */
+    padding-block: 0.25rem;
+    padding-inline: var(--page-gutter);
+  }
+
+  .countries-marquee__list {
+    display: flex;
+    gap: var(--marquee-gap);
+  }
+
+  .countries-marquee__clone {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .countries-marquee {
+      --marquee-fade: 2.5rem;
+
+      flex: 1;
+      margin-inline: 0;
+    }
+
+    .countries-marquee__track {
+      padding-inline: 0 var(--marquee-fade);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .countries-marquee::before {
+      opacity: 1;
+    }
+
+    .countries-marquee__viewport {
+      overflow: hidden;
+    }
+
+    .countries-marquee__track {
+      padding-inline: 0;
+      animation: countries-marquee var(--marquee-duration, 60s) linear infinite;
+    }
+
+    .countries-marquee__list {
+      padding-inline-end: var(--marquee-gap);
+    }
+
+    .countries-marquee__clone {
+      display: flex;
+    }
+  }
+
+  @keyframes countries-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}

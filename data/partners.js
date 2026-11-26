@@ -5,8 +5,9 @@ export const partners = [
     short_name: "CA Mukunda",
     image: "/leadership/ca-mukunda.jpg",
     imagePosition: "50% 16%",
+    qualification: "B.Com., Grad. CMA, FCA, DISA",
     designation: "Managing Partner",
-    practice: "Head of Audit & Direct Taxation",
+    practice: "Head of Taxation & Audit",
     bio: [
       "Mukunda leads the Direct Taxation and Statutory Audit practices, bringing over two decades of rich professional experience across diverse industries and international markets, including Europe, the USA and the UK. His professional journey includes an association with TYCO International, where he gained valuable exposure to corporate finance, taxation and global business operations.",
       "A commerce graduate, Mukunda holds the qualifications of CWA, FCA and DISA, combining strong technical expertise with a practical understanding of complex financial and regulatory matters. He specialises in direct taxation, statutory audits, financial reporting and regulatory compliance, with a focus on delivering sound professional advice, ensuring compliance and helping businesses navigate evolving tax and audit requirements. His extensive experience, analytical approach and commitment to professional excellence make him a trusted advisor to clients across sectors.",
@@ -18,6 +19,7 @@ export const partners = [
     short_name: "CA Shubha",
     image: "/leadership/ca-shubha.jpg",
     imagePosition: "50% 21%",
+    qualification: "B.Com., ACS, FCA, CISA",
     designation: "Partner",
     practice: "Corporate Law",
     bio: [
@@ -31,6 +33,7 @@ export const partners = [
     short_name: "CA Abhishek",
     image: "/leadership/ca-abhishek.jpg",
     imagePosition: "50% 20%",
+    qualification: "B.Com., FCA",
     designation: "Partner",
     practice: "Public Sector Audit",
     bio: [
@@ -44,6 +47,7 @@ export const partners = [
     short_name: "CA Devendra",
     image: "/leadership/ca-nayak.jpg",
     imagePosition: "50% 27%",
+    qualification: "B.Com., FCA, LLB",
     designation: "Partner",
     practice: "FEMA & International Taxation",
     bio: [
@@ -57,6 +61,7 @@ export const partners = [
     short_name: "CA Abilash",
     image: "/leadership/ca-abilash.jpg",
     imagePosition: "50% 15%",
+    qualification: "B.Com., FCA, LLB",
     designation: "Partner",
     practice: "Indirect Taxation",
     bio: [
@@ -70,8 +75,9 @@ export const partners = [
     short_name: "CA Mani",
     image: "/leadership/ca-mani.jpg",
     imagePosition: "50% 19%",
-    designation: "B.COM, FCA",
-    practice: "Audit and International Taxation",
+    qualification: "B.Com., FCA",
+    designation: "Partner",
+    practice: "Audit & International Taxation",
     bio: [
       "CA Manikanteshwarudu Thoka is a Fellow Chartered Accountant (FCA) with extensive experience in auditing, accounting, financial reporting, and regulatory compliance. As the head of the firm's Audit practice, he plays a key role in overseeing audit engagements and ensuring the quality, accuracy, and professional integrity of audit deliverables. With a strong understanding of financial systems, accounting principles, and applicable statutory requirements, he brings a methodical and detail-oriented approach to evaluating financial statements, assessing compliance, and addressing complex audit matters. His expertise and commitment to professional standards contribute to the delivery of reliable and insightful audit services across the firm's diverse client base.",
       "In addition to his audit expertise, Mani has substantial knowledge of international taxation, including cross-border tax regulations, tax planning, and international tax reporting requirements. He helps clients navigate complex tax and compliance matters arising from international business operations, bringing a practical perspective to evolving regulatory requirements. In his leadership role, he oversees the audit function and is responsible for the finalisation of audit assignments, providing technical guidance to engagement teams and reviewing deliverables to maintain consistency and quality. His analytical approach, attention to detail, and focus on professional excellence make him an integral part of the firm's leadership and client service capabilities.",
@@ -84,8 +90,9 @@ export const partners = [
     short_name: "CA Prashanth",
     image: "/leadership/ca-prashant.jpg",
     imagePosition: "50% 16%",
-    designation: "B.Com, FCA, DISA",
-    practice: "Partner – Hyderabad Branch",
+    qualification: "B.Com., FCA, DISA",
+    designation: "Partner",
+    practice: "",
     bio: [
       "CA Prashanth Reddy Yalala is a Fellow Chartered Accountant (FCA) with a Diploma in Information System Audit (DISA) and extensive experience in taxation, accounting, and audit services. His areas of expertise include Goods and Services Tax (GST), Income Tax, statutory audits, and internal audits. With a strong understanding of financial reporting, regulatory frameworks, and business requirements, he provides practical and comprehensive professional services to clients across diverse industries, helping them strengthen compliance, manage tax obligations, and maintain robust financial processes.",
       "As the Partner heading the firm's Hyderabad branch, Prashanth is responsible for overseeing branch operations, managing client relationships, and driving the delivery of quality professional services. He works closely with businesses on tax planning, compliance management, audit engagements, and strategic advisory, offering solutions tailored to their operational and regulatory needs. Through his leadership, professional expertise, and client-focused approach, he plays an important role in strengthening the firm's presence in Hyderabad and building long-term relationships founded on trust, responsiveness, and professional excellence.",
@@ -97,8 +104,9 @@ export const partners = [
     short_name: "CA Rakesh",
     image: "/leadership/ca-rakesh.jpeg",
     imagePosition: "50% 16%",
-    designation: "BCom, ACA",
-    practice: "",
+    qualification: "B.Com (A&F), ACA",
+    designation: "Manager",
+    practice: "Direct Tax Head",
     bio: [
       "CA Rakesh Kumar H is a Chartered Accountant specialising in Direct Taxation, with particular focus on income-tax litigation and advisory. His experience includes handling assessments, reassessments, penalty and rectification proceedings, and appeals before the Commissioner of Income Tax (Appeals) and the Income Tax Appellate Tribunal.",
       "He is actively involved in drafting responses to statutory notices, written submissions, grounds of appeal, stay petitions and tax opinions, supported by detailed analysis of statutory provisions and judicial precedents. He also advises on domestic and international taxation, withholding tax and related compliance matters, assisting clients in addressing complex tax issues and resolving disputes with tax authorities.",
@@ -110,8 +118,9 @@ export const partners = [
     short_name: "Ganesh",
     image: "/leadership/ganesh.jpeg",
     imagePosition: "50% 16%",
-    designation: "Consultant - accounting and reviews",
-    practice: "",
+    qualification: "BBM, CA (Inter)",
+    designation: "Manager",
+    practice: "Accounting & Reviews",
     bio: [
       "Ganesh Kamath is a finance, taxation and compliance professional specialising in trust and NGO taxation, charitable institutions and not-for-profit organisations. He advises trusts, NGOs and charitable and religious institutions on income tax and statutory compliances, including 12A/12AB, 80G and 10(23C) registrations, tax exemptions, return filings, audits and regulatory requirements.",
       "He has extensive experience in accounting, financial and GAAP reporting, statutory compliance reviews and technical reviews across education, manufacturing, real estate, construction, event management, consultancy and background verification sectors. He has also managed accounting, reporting and compliance for subsidiaries of Fortune 500 multinational corporations and their international group entities, with expertise in direct and indirect taxation, international taxation, financial statement finalisation and tax advisory.",
@@ -123,7 +132,8 @@ export const partners = [
     short_name: "Kiran",
     image: "/leadership/kiran.jpeg",
     imagePosition: "50% 16%",
-    designation: "M Com (Taxation), B Com (Hons), ACS",
+    qualification: "B.Com (Hons), ACS, M.Com (Taxation)",
+    designation: "Manager",
     practice: "",
     bio: [
       "CS Kiran Gupta is a Qualified Company Secretary with professional expertise in Corporate Laws, Company Incorporation, Corporate Restructuring, Regulatory Compliance, Corporate Governance and RBI-related compliances for companies. She has extensive experience handling end-to-end MCA filings, corporate advisory, and business restructuring, including converting entities into LLPs and LLPs into Private Limited Companies.",
@@ -136,8 +146,9 @@ export const partners = [
     short_name: "Shilpa",
     image: "/leadership/shilpa.jpeg",
     imagePosition: "50% 16%",
-    designation: "Consulting - Human Resource",
-    practice: "",
+    qualification: "BA",
+    designation: "Manager",
+    practice: "HR",
     bio: [
       "Shilpa O E is a dynamic and result-oriented HR professional with expertise in managing end-to-end HR operations and strategic people management. Skilled in talent acquisition, workforce planning, employee lifecycle management, and organizational development.",
       "Experienced in implementing HR policies, performance management systems, KPI frameworks, employee engagement initiatives, and appraisal processes. Proficient in compensation and benefits coordination, payroll administration, and statutory compliance. Adept at handling employee relations, grievance resolution, learning and development, and HR process improvements.",

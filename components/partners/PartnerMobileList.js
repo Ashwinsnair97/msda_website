@@ -28,6 +28,9 @@ export default function PartnerMobileList({ partners, onOpenProfile }) {
             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 tone-inverse">
               <div className="min-w-0">
                 <p className="font-heading text-2xl leading-[1.05]">{partner.name}</p>
+                {partner.qualification && (
+                  <p className="mt-1 text-xs text-fg/85">{partner.qualification}</p>
+                )}
                 {partner.designation && (
                   <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-accent-pale">
                     {partner.designation}

@@ -1,8 +1,8 @@
 "use client";
 
-import { Check, Copy, Mail, X } from "lucide-react";
+import { Check, Copy, Mail, Phone, X } from "lucide-react";
 import { useEffect, useEffectEvent, useRef, useState } from "react";
-import { mailtoHref, site } from "@/data/site";
+import { mailtoHref, site, telHref } from "@/data/site";
 
 const iconButton =
   "focus-ring inline-flex h-9 w-9 flex-none items-center justify-center rounded-full text-fg transition-colors [--focus-ring-offset:2px] hover:bg-action hover:text-on-action";
@@ -27,14 +27,59 @@ async function copyText(text) {
   }
 }
 
-// Small non-modal popover with the contact email, a copy button and a mailto
-// link. The parent positions it (via className) next to its trigger and only
-// renders it while open. Clicks on the trigger are ignored here so the
-// trigger can toggle it.
+// One contact detail: label and value on the left, copy and open actions on
+// the right.
+function ContactRow({
+  label,
+  value,
+  href,
+  openLabel,
+  OpenIcon,
+  isCopied,
+  onCopy,
+  onOpen,
+  copyButtonRef,
+}) {
+  return (
+    <li className="flex items-center gap-1 py-3">
+      <div className="min-w-0 flex-1">
+        <p className="text-xs font-medium uppercase tracking-[0.16em] text-fg-muted">
+          {label}
+        </p>
+        <p className="mt-0.5 select-all truncate text-base font-semibold">{value}</p>
+      </div>
+      <button
+        ref={copyButtonRef}
+        type="button"
+        onClick={onCopy}
+        className={iconButton}
+        aria-label={isCopied ? `${label} copied` : `Copy ${label.toLowerCase()}`}
+        title={isCopied ? "Copied" : "Copy"}
+      >
+        {isCopied ? <Check size={17} className="text-accent" /> : <Copy size={17} />}
+      </button>
+      <a
+        href={href}
+        onClick={onOpen}
+        className={iconButton}
+        aria-label={openLabel}
+        title={openLabel}
+      >
+        <OpenIcon size={17} />
+      </a>
+    </li>
+  );
+}
+
+// Small non-modal popover with the contact email and phone number, each with
+// a copy button and a mailto / tel link. The parent positions it (via
+// className) next to its trigger and only renders it while open. Clicks on
+// the trigger are ignored here so the trigger can toggle it.
 export default function ContactPopover({ id, triggerRef, onClose, className = "" }) {
   const popoverRef = useRef(null);
   const copyButtonRef = useRef(null);
-  const [isCopied, setIsCopied] = useState(false);
+  // Which detail was just copied: "email", "phone" or null.
+  const [copied, setCopied] = useState(null);
 
   const handleKeyDown = useEffectEvent((event) => {
     if (event.key === "Escape") {
@@ -61,13 +106,13 @@ export default function ContactPopover({ id, triggerRef, onClose, className = ""
   }, []);
 
   useEffect(() => {
-    if (!isCopied) return;
-    const timer = setTimeout(() => setIsCopied(false), 2000);
+    if (!copied) return;
+    const timer = setTimeout(() => setCopied(null), 2000);
     return () => clearTimeout(timer);
-  }, [isCopied]);
+  }, [copied]);
 
-  const handleCopy = async () => {
-    if (await copyText(site.email)) setIsCopied(true);
+  const copy = (key, text) => async () => {
+    if (await copyText(text)) setCopied(key);
   };
 
   return (
@@ -81,7 +126,7 @@ export default function ContactPopover({ id, triggerRef, onClose, className = ""
     >
       <div className="flex items-start justify-between gap-4">
         <h2 id={`${id}-title`} className="font-heading text-2xl leading-tight tracking-tight">
-          Write to us
+          Get in touch
         </h2>
         <button
           type="button"
@@ -96,38 +141,37 @@ export default function ContactPopover({ id, triggerRef, onClose, className = ""
         </button>
       </div>
       <p id={`${id}-description`} className="mt-1 text-[0.95rem] text-fg-copy">
-        Have a question? Reach our team by email.
+        Have a question? Reach our team by email or phone.
       </p>
 
-      <div className="mt-4 flex items-center gap-1 rounded-card border border-line bg-surface-page py-2 pl-4 pr-2">
-        <span className="min-w-0 flex-1 select-all truncate text-base font-semibold">
-          {site.email}
-        </span>
-        <button
-          ref={copyButtonRef}
-          type="button"
-          onClick={handleCopy}
-          className={iconButton}
-          aria-label={isCopied ? "Email copied" : "Copy email address"}
-          title={isCopied ? "Copied" : "Copy"}
-        >
-          {isCopied ? <Check size={17} className="text-accent" /> : <Copy size={17} />}
-        </button>
-        <a
+      <ul className="mt-3 divide-y divide-line">
+        <ContactRow
+          label="Email"
+          value={site.email}
           href={mailtoHref}
-          onClick={onClose}
-          className={iconButton}
-          aria-label="Open in your email app"
-          title="Open in email app"
-        >
-          <Mail size={17} />
-        </a>
-      </div>
+          openLabel="Open in your email app"
+          OpenIcon={Mail}
+          isCopied={copied === "email"}
+          onCopy={copy("email", site.email)}
+          onOpen={onClose}
+          copyButtonRef={copyButtonRef}
+        />
+        <ContactRow
+          label="Phone"
+          value={site.phone}
+          href={telHref}
+          openLabel="Call this number"
+          OpenIcon={Phone}
+          isCopied={copied === "phone"}
+          onCopy={copy("phone", site.phone)}
+          onOpen={onClose}
+        />
+      </ul>
 
-      <p className="mt-3 text-xs text-fg-muted" aria-live="polite">
-        {isCopied
-          ? "Email address copied to clipboard."
-          : "Copy the email address or open your default email application."}
+      {/* Announces a successful copy; the check icon is the visual cue. */}
+      <p className="sr-only" aria-live="polite">
+        {copied === "email" && "Email address copied to clipboard."}
+        {copied === "phone" && "Phone number copied to clipboard."}
       </p>
     </div>
   );

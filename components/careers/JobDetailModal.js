@@ -139,7 +139,14 @@ export default function JobDetailModal({ opening, index, onClose }) {
           <p className="text-sm leading-6 text-fg-muted">
             You&apos;ll be asked for your contact details and latest CV.
           </p>
-          <Button href={openingApplyHref(opening)} icon="→" className="w-full sm:w-auto">
+          {/* Close as we leave: the careers page keeps its state on the way
+              back, so the modal would otherwise still be open there. */}
+          <Button
+            href={openingApplyHref(opening)}
+            onClick={onClose}
+            icon="→"
+            className="w-full sm:w-auto"
+          >
             Apply for this role
           </Button>
         </div>

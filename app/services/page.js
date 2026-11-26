@@ -1,6 +1,7 @@
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/animations";
 import ContactSection from "@/components/contact/ContactSection";
 import ApproachSection from "@/components/sections/ApproachSection";
+import CountriesWeServe from "@/components/sections/CountriesWeServe";
 import Button from "@/components/ui/Button";
 import PageHero from "@/components/ui/PageHero";
 import Section from "@/components/ui/Section";
@@ -102,6 +103,8 @@ export default function ServicesPage() {
           </StaggerContainer>
         </div>
       </Section>
+
+      <CountriesWeServe />
 
       <ApproachSection />
 
