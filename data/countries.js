@@ -16,7 +16,6 @@ export const countries = [
   { name: "Austria", flag: "/flags/at.svg" },
   { name: "Netherlands", flag: "/flags/nl.svg" },
   { name: "Germany", flag: "/flags/de.svg" },
-  // Dubai is a city; it shows the flag of the United Arab Emirates.
   { name: "Dubai", flag: "/flags/ae.svg" },
   { name: "Malaysia", flag: "/flags/my.svg" },
   { name: "Singapore", flag: "/flags/sg.svg" },
